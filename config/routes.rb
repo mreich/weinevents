@@ -6,7 +6,7 @@ Weinevents::Application.routes.draw do
 
   get "pages/home"
 
-  root :to => 'pages#home'
+  root :to => 'events#index'
   get 'about' => 'pages#about'
 
   # The priority is based upon order of creation:
