@@ -27,9 +27,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'rails', '3.2.12'
 gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
+gem "paperclip", "~> 3.0"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
