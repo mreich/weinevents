@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Weinevents</title>
+  <title>Weinevents | Weinproben, Weinfeste, Weinparties und andere Weinevents</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= tag :meta, name: "viewport", content: "width=device-width, initial-scale=1.0" %>
 </head>
 <body>
 
-<%= yield %>
+<%= render 'layouts/header' %>
+
+<div class="container">
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+</div>
 
 </body>
 </html>
