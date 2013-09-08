@@ -83,4 +83,8 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def event_params
+   params.require(:event).permit(:description, :image)
+  end
 end
