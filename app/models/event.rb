@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
-  attr_accessible :description, :image
+  attr_accessible :title, :description, :image
 
-  validates :user_id, :description, presence: true
+  validates :user_id, :title, :description, presence: true
   has_attached_file :image, styles: { medium: "320x240>"}
   validates_attachment :image, 
                             content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },

@@ -3,7 +3,8 @@
   <%= f.full_error :image_file_size, class: "alert alert-error" %>
   <%= f.full_error :image_content_type, class: "alert alert-error" %>
 
-	<%= f.input :description, as: :text, input_html: { rows: "3" } %>
+	<%= f.input :title, as: :text, input_html: { rows: "1" } %>
+	<%= f.input :description, as: :text, input_html: { rows: "20" } %>
 	<%= f.input :image, label: "Upload an image" %>
 
   <div class="form-actions">

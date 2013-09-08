@@ -2,10 +2,13 @@
     <div class="span6 offset3">
         <div class="well">
             <p>
+              <%= @event.title %>
+            </p>
+            <p>
   						<%= @event.description %>
 						</p>
             <p>
-  						<%= @event.user.name %>
+  						Submitted by <%= @event.user.name %>
 						</p>
 						<%= image_tag @event.image %>
 						<% if current_user == @event.user %> 
