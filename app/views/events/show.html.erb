@@ -8,6 +8,12 @@
   						<%= @event.description %>
 						</p>
             <p>
+              <% if @event.price == nil %>
+              <% else %>
+                Price in EUR: <%= @event.price %>
+              <% end %>
+            </p>
+            <p>
   						Submitted by <%= @event.user.name %>
 						</p>
             <p>
