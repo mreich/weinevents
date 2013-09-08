@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   attr_accessible :description
 
-  validates :description, presence: true
+  belongs_to :user
+  validates :user_id, :description, presence: true
 end
