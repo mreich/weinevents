@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :title, :description, :website, :image, :price
+  attr_accessible :title, :description, :website, :image, :price, :url
 
   validates :user_id, :title, :description, presence: true
   has_attached_file :image, styles: { medium: "320x240>"}
@@ -14,10 +14,10 @@ class Event < ActiveRecord::Base
   
   #Required for stringex URL conversion
   
-  #acts_as_url :title
+  acts_as_url :title
 
-	#def to_param
-  #	url
-	#end
+	def to_param
+  	url
+	end
 
 end
