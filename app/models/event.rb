@@ -11,4 +11,13 @@ class Event < ActiveRecord::Base
 
   belongs_to :user
 
+  
+  #Required for stringex URL conversion
+  
+  #acts_as_url :title
+
+	#def to_param
+  #	url
+	#end
+
 end
