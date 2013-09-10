@@ -12,6 +12,8 @@ Weinevents::Application.routes.draw do
   root :to => 'events#index'
   get 'about' => 'pages#about'
 
+  get 'tags/:tag', to: 'events#index', as: :tag
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
