@@ -1,0 +1,22 @@
+<h1>Find Wine Events in these Cities</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @sitecities %>
+  </tbody>
+
+</table>
+
+<br />
+
+
+<%= link_to 'New Sitecity', new_sitecity_path %>

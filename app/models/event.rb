@@ -11,6 +11,8 @@ class Event < ActiveRecord::Base
 
   belongs_to :user
 
+  belongs_to :sitecity
+
   
   #Required for stringex URL conversion
   

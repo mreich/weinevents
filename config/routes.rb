@@ -1,4 +1,7 @@
 Weinevents::Application.routes.draw do
+  resources :sitecities
+
+
   resources :events
 
 
