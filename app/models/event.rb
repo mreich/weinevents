@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
                             content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },
                             size: { less_than: 5.megabytes }
 
-  validates :price, :format => { :with => /^\d+??(?:\.\d{0,2})?$/ }, :numericality => {:greater_than => 0, :less_than => 1000}
+  validates :price, :format => { :with => /^\d+??(?:\.\d{0,2})?$/ }, :numericality => {:greater_than_or_equal_to => 0, :less_than => 1000}
 
   belongs_to :user
 
@@ -18,10 +18,11 @@ class Event < ActiveRecord::Base
   
   acts_as_url :title
 
-  acts_as_taggable
+  def to_param
+    url
+  end
 
-	def to_param
-  	url
-	end
+  #Required for acts_as_taggable Tagging feature
+  acts_as_taggable
 
 end
