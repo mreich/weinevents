@@ -14,6 +14,8 @@ Weinevents::Application.routes.draw do
 
   get 'tags/:tag', to: 'events#index', as: :tag
 
+  get 'cities/:sitecity', to: 'events#index', as: :sitecity
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
