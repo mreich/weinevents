@@ -1,5 +1,17 @@
-<% content_for :head do %>
-  <title>Weinevents | Weinproben, Weinfeste, Weinparties und andere Weinevents</title>
+<% if params[:tag] %>
+  <% content_for :head do %>
+    <title> TAG Weinevents</title>
+  <% end %>
+<% else %>
+  <% if params[:sitecity] %>
+    <% content_for :head do %>
+      <title>Weinevents in CITY | Weinproben in CITY | Weinseminare in CITY</title>
+    <% end %>
+  <% else %>
+    <% content_for :head do %>
+      <title>Weinevents | Weinproben, Weinfeste, Weinparties und andere Weinevents</title>
+    <% end %>
+  <% end %>      
 <% end %>
 
 <h1>The latest wine events</h1>
