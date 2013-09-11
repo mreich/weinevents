@@ -8,6 +8,8 @@
 	<%= f.input :price, label: "Price in EUR:", as: :decimal, input_html: { rows: "1" } %>
 	<%= f.input :website, as: :text, input_html: { rows: "1" } %>
   
+  <%= f.input :sitecity_id, label: "Closest city:", :collection => Sitecity.all.collect %>
+
   <%= f.input :tag_list, label: "Tags (separated by commas)", input_html: { rows: "1" } %>
   
 	<%= f.input :image, label: "Upload an image" %>

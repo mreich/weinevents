@@ -12,6 +12,9 @@
   						<%= @event.description %>
 						</p>
             <p>
+               Closest city: <%= @event.sitecity.name %>
+            </p>
+            <p>
               <% if @event.price == nil %>
               <% else %>
                 Price in EUR: <%= @event.price %>
