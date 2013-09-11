@@ -1,7 +1,14 @@
 <tr>  
   <td><%= link_to (image_tag event.image(:medium)), event %></td>
   <td><%= link_to (event.title), event %></td>
-  <td><%= link_to 'Show', event %></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
   <% if current_user == event.user %>
 	  <td><%= link_to 'Edit', edit_event_path(event) %></td>
 	  <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
