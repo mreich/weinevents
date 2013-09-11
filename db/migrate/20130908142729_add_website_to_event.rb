@@ -1,5 +1,5 @@
 class AddWebsiteToEvent < ActiveRecord::Migration
   def change
-    add_column :events, :website, :string
+    add_column :events, :website, :text
   end
 end

@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130910165811) do
+ActiveRecord::Schema.define(:version => 20130910115455) do
 
-  create_table "Events", :force => true do |t|
+  create_table "events", :force => true do |t|
     t.text     "description"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
@@ -23,13 +23,13 @@ ActiveRecord::Schema.define(:version => 20130910165811) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "title"
-    t.string   "website"
+    t.text     "website"
     t.decimal  "price"
     t.string   "url"
   end
 
-  add_index "Events", ["url"], :name => "index_events_on_url", :unique => true
-  add_index "Events", ["user_id"], :name => "index_events_on_user_id"
+  add_index "events", ["url"], :name => "index_events_on_url", :unique => true
+  add_index "events", ["user_id"], :name => "index_events_on_user_id"
 
   create_table "sitecities", :force => true do |t|
     t.string   "name"
