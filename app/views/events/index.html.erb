@@ -5,7 +5,8 @@
 <% else %>
   <% if params[:sitecity] %>
     <% content_for :head do %>
-      <title>Weinevents in CITY | Weinproben in CITY | Weinseminare in CITY</title>
+      <% @sitecity = Sitecity.find_by_url(params[:sitecity]) %>
+      <title>Weinevents in <%= @sitecity.name %> | Weinproben in <%= @sitecity.name %> | Weinseminare in <%= @sitecity.name %></title>
     <% end %>
   <% else %>
     <% content_for :head do %>
