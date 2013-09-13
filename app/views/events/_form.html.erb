@@ -3,14 +3,22 @@
   <%= f.full_error :image_file_size, class: "alert alert-error" %>
   <%= f.full_error :image_content_type, class: "alert alert-error" %>
 
-	<%= f.input :title, as: :text, input_html: { rows: "1" } %>
-	<%= f.input :description, as: :text, input_html: { rows: "20" } %>
+	<%= f.input :title, as: :text, input_html: { rows: "1", class: "span8" } %>
+	<%= f.input :description, as: :text, input_html: { rows: "20", class: "span8" } %>
+  <%= f.input :startdatetime, label: "Starting at:" %>
+  <%= f.input :enddatetime, label: "Ending at:" %>
 	<%= f.input :price, label: "Price in EUR:", as: :decimal, input_html: { rows: "1" } %>
-	<%= f.input :website, as: :text, input_html: { rows: "1" } %>
-  
-  <%= f.input :sitecity_id, label: "Closest city:", :collection => Sitecity.all.collect %>
+	<%= f.input :website, as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :location, as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :street1, label: "Street 1:", as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :street2, label: "Street 2:", as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :city, as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :sitecity_id, label: "Nearest bigger city:", :collection => Sitecity.all.collect %>
+  <%= f.input :postalcode, label: "Postal code:", as: :text, input_html: { rows: "1" } %>
+  <%= f.input :email, label: "Email for inquiries:", as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :phone, label: "Phone for inquiries:", as: :text, input_html: { rows: "1", class: "span5" } %>
 
-  <%= f.input :tag_list, label: "Tags (separated by commas)", input_html: { rows: "1" } %>
+  <%= f.input :tag_list, label: "Tags (separated by commas)", input_html: { rows: "1", class: "span5" } %>
   
 	<%= f.input :image, label: "Upload an image" %>
 
