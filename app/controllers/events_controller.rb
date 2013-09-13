@@ -10,7 +10,7 @@ class EventsController < ApplicationController
       @events = Event.tagged_with(params[:tag]).order("created_at desc").page(params[:page]).per_page(20)
     else
       if params[:sitecity]
-        @events = Event.where(sitecity_id: params[:sitecity]).order("created_at desc").page(params[:page]).per_page(20)
+        @events = Event.where(sitecity_id: Sitecity.find_by_url(params[:sitecity])).order("created_at desc").page(params[:page]).per_page(20)
       else
         @events = Event.order("created_at desc").page(params[:page]).per_page(20)
       end      

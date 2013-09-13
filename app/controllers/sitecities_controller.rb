@@ -13,7 +13,7 @@ class SitecitiesController < ApplicationController
   # GET /sitecities/1
   # GET /sitecities/1.json
   def show
-    @sitecity = Sitecity.find(params[:id])
+    @sitecity = Sitecity.find_by_url(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +34,7 @@ class SitecitiesController < ApplicationController
 
   # GET /sitecities/1/edit
   def edit
-    @sitecity = Sitecity.find(params[:id])
+    @sitecity = Sitecity.find_by_url(params[:id])
   end
 
   # POST /sitecities
@@ -56,7 +56,7 @@ class SitecitiesController < ApplicationController
   # PUT /sitecities/1
   # PUT /sitecities/1.json
   def update
-    @sitecity = Sitecity.find(params[:id])
+    @sitecity = Sitecity.find_by_url(params[:id])
 
     respond_to do |format|
       if @sitecity.update_attributes(params[:sitecity])
@@ -72,7 +72,7 @@ class SitecitiesController < ApplicationController
   # DELETE /sitecities/1
   # DELETE /sitecities/1.json
   def destroy
-    @sitecity = Sitecity.find(params[:id])
+    @sitecity = Sitecity.find_by_url(params[:id])
     @sitecity.destroy
 
     respond_to do |format|
