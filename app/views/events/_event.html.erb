@@ -1,10 +1,14 @@
 <tr>  
-  <td><%= link_to (image_tag event.image(:medium)), event %></td>
-  <td><%= link_to (event.title), event %></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>
+    <%= event.startdatetime.strftime('%_d.%_m.%Y') %><br/>
+    <%= event.startdatetime.strftime('%H:%M') %> Uhr<br/>
+  </td>
+  <td>
+    <strong><%= link_to (event.title), event %></strong><br/>
+    <%= link_to (image_tag event.image(:small)), event %> <br/>
+    <%= truncate(event.description, :length => 220) %> <%= link_to 'Mehr', event %><br/><br/>
+    <%= event.location %>, <%= event.street1 %>, <%= event.city %> <br/>
+  </td>
   <td></td>
   <td></td>
   <td></td>

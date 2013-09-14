@@ -25,4 +25,6 @@ class Event < ActiveRecord::Base
   #Required for acts_as_taggable Tagging feature
   acts_as_taggable
 
+  scope :current, lambda { where('startdatetime >= ?', Time.now) }
+
 end
