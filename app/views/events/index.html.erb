@@ -11,15 +11,12 @@
   <% end %>
 <% end %>
 
-<% if user_signed_in? %>
-  <% if params[:sitecity] %>
-    <h1>Weinevents in <%= @sitecity.name %></h1> 
-  <% else %>
-    <h1>The latest wine events</h1>
-  <% end %> 
+
+<% if params[:sitecity] %>
+  <h1>Weinevents in <%= @sitecity.name %></h1><br/> 
 <% else %>
-  <%= render 'pages/home' %>
-<% end %>
+  <h1>The latest wine events</h1><br/>
+<% end %> 
 
 <table class="table table-striped">
   <thead>
@@ -39,10 +36,20 @@
 
 <br />
 
-<%= will_paginate @events %>
+<%= will_paginate @events %><br />
+
+<%= link_to "Add a new wine event event now", new_event_path %>
+<br /><br />
 
 <div id="tag_cloud">
   <% tag_cloud Event.tag_counts, %w[s m l] do |tag, css_class| %>
     <%= link_to tag.name, tag_path(tag.name), class: css_class %>
   <% end %>
 </div>
+
+<% unless user_signed_in? %>
+  <% if params[:sitecity] %>
+  <% else %>
+    <%= render 'pages/home' %>
+  <% end %>
+<% end %>
