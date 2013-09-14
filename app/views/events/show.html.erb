@@ -3,14 +3,16 @@
 <% end %>
 
 <div class="row">
-    <div class="span6 offset3">
+    <div class="span9 offset0">
         <div class="well">
             <h1>
               <%= @event.title %>
-            </h1>
+            </h1> in <%= @event.sitecity.name %>
+            <br/>
             <p>
   						<%= @event.description %>
 						</p>
+            <br/>
             <p>
                Closest city: <%= @event.sitecity.name %>
             </p>
