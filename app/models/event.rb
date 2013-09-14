@@ -27,4 +27,6 @@ class Event < ActiveRecord::Base
 
   scope :current, lambda { where('startdatetime >= ?', Time.now) }
 
+  scope :past, lambda { where('startdatetime < ?', Time.now) }
+
 end

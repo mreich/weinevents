@@ -13,7 +13,7 @@
 
 
 <% if params[:sitecity] %>
-  <h1>Weinevents in <%= @sitecity.name %></h1><br/> 
+  <h1>Wine events in <%= @sitecity.name %></h1><br/> 
 <% else %>
   <h1>The latest wine events</h1><br/>
 <% end %> 
@@ -29,14 +29,40 @@
   </thead>
 
   <tbody>
-    <%= render @events %>
+    <%= render @events.current %>
   </tbody>
 
 </table>
 
 <br />
 
-<%= will_paginate @events %><br />
+<%= will_paginate @events.current %><br />
+
+<% if params[:sitecity] %>
+  <h3>Past wine events in <%= @sitecity.name %></h3><br/> 
+<% else %>
+  <h3>Past wine events</h3><br/>
+<% end %> 
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @events.past %>
+  </tbody>
+
+</table>
+
+<br />
+
+<%= will_paginate @events.past %><br />
 
 <%= link_to "Add a new wine event now", new_event_path %>
 <br /><br />
