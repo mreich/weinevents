@@ -7,17 +7,19 @@
     <% content_for :head do %>
       <% @sitecity = Sitecity.find_by_url(params[:sitecity]) %>
       <title>Weinevents in <%= @sitecity.name %> | Weinproben in <%= @sitecity.name %> | Weinseminare in <%= @sitecity.name %></title>
-    <% end %>
-  <% else %>
-    <% content_for :head do %>
-      <title>Weinevents | Weinproben, Weinfeste, Weinparties und andere Weinevents</title>
-    <% end %>
-  <% end %>      
+    <% end %>    
+  <% end %>
 <% end %>
 
-<h1>The latest wine events</h1>
-
-<%= render 'pages/home' %>
+<% if user_signed_in? %>
+  <% if params[:sitecity] %>
+    <h1>Weinevents in <%= @sitecity.name %></h1> 
+  <% else %>
+    <h1>The latest wine events</h1>
+  <% end %> 
+<% else %>
+  <%= render 'pages/home' %>
+<% end %>
 
 <table class="table table-striped">
   <thead>
