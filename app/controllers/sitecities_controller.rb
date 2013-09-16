@@ -44,7 +44,7 @@ class SitecitiesController < ApplicationController
 
     respond_to do |format|
       if @sitecity.save
-        format.html { redirect_to @sitecity, notice: 'Sitecity was successfully created.' }
+        format.html { redirect_to @sitecity, notice: t(:sitecity_create_success) }
         format.json { render json: @sitecity, status: :created, location: @sitecity }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class SitecitiesController < ApplicationController
 
     respond_to do |format|
       if @sitecity.update_attributes(params[:sitecity])
-        format.html { redirect_to @sitecity, notice: 'Sitecity was successfully updated.' }
+        format.html { redirect_to @sitecity, notice: t(:sitecity_update_success) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

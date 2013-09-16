@@ -1,9 +1,9 @@
 <div class="center hero-unit">
-	<h1>Weinevents</h1>
-	<h2> Weinproben, Weinfeste, Weinparties und andere Weinevents</h2>
+	<h1><%=t :wineevents %></h1>
+	<h2><%=t :default_title %></h2>
 
 	<p>
-	  <%= link_to "Jetzt anmelden und Weinevents hinzufügen", new_user_registration_path, class: "btn btn-large btn-primary" %>
+	  <%= link_to t(:join_now), new_user_registration_path, class: "btn btn-large btn-primary" %>
 	</p>
 
 </div>

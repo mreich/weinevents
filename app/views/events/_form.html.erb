@@ -3,24 +3,24 @@
   <%= f.full_error :image_file_size, class: "alert alert-error" %>
   <%= f.full_error :image_content_type, class: "alert alert-error" %>
 
-	<%= f.input :title, as: :text, input_html: { rows: "1", class: "span8" } %>
-	<%= f.input :description, as: :text, input_html: { rows: "20", class: "span8" } %>
-  <%= f.input :startdatetime, label: "Starting at:" %>
-  <%= f.input :enddatetime, label: "Ending at:" %>
-	<%= f.input :price, label: "Price in EUR:", as: :decimal, input_html: { rows: "1" } %>
-	<%= f.input :website, as: :text, input_html: { rows: "1", class: "span5" } %>
-  <%= f.input :location, as: :text, input_html: { rows: "1", class: "span5" } %>
-  <%= f.input :street1, label: "Street 1:", as: :text, input_html: { rows: "1", class: "span5" } %>
-  <%= f.input :street2, label: "Street 2:", as: :text, input_html: { rows: "1", class: "span5" } %>
-  <%= f.input :city, as: :text, input_html: { rows: "1", class: "span5" } %>
-  <%= f.input :sitecity_id, label: "Nearest bigger city:", :collection => Sitecity.all.collect %>
-  <%= f.input :postalcode, label: "Postal code:", as: :text, input_html: { rows: "1" } %>
-  <%= f.input :email, label: "Email for inquiries:", as: :text, input_html: { rows: "1", class: "span5" } %>
-  <%= f.input :phone, label: "Phone for inquiries:", as: :text, input_html: { rows: "1", class: "span5" } %>
+	<%= f.input :title, label: t(:event_title), as: :text, input_html: { rows: "1", class: "span8" } %>
+	<%= f.input :description, label: t(:event_description), as: :text, input_html: { rows: "20", class: "span8" } %>
+  <%= f.input :startdatetime, label: t(:event_startdatetime), input_html: { class: "span1" } %>
+  <%= f.input :enddatetime, label: t(:event_enddatetime), input_html: { class: "span1" } %>
+	<%= f.input :price, label: t(:event_price), as: :decimal, input_html: { rows: "1", class: "span1" } %>
+	<%= f.input :website, label: t(:event_website), as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :location, label: t(:event_location), as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :sitecity_id, label: t(:event_sitecity_id), :collection => Sitecity.all.collect %>
+  <%= f.input :street1, label: t(:event_street1), as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :street2, label: t(:event_street2), as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :city, label: t(:event_city), as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :postalcode, label: t(:event_postalcode), as: :text, input_html: { rows: "1", class: "span2" } %>
+  <%= f.input :email, label: t(:event_email), as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :phone, label: t(:event_phone), as: :text, input_html: { rows: "1", class: "span5" } %>
 
-  <%= f.input :tag_list, label: "Tags (separated by commas)", input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :tag_list, label: t(:event_tag_list), input_html: { rows: "1", class: "span5" } %>
   
-	<%= f.input :image, label: "Upload an image" %>
+	<%= f.input :image, label: t(:event_image) %>
 
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-primary" %>

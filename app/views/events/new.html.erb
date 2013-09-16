@@ -1,9 +1,9 @@
 <% content_for :head do %>
-  <title>Submit a new wine event | Weinevents</title>
+  <title><%=t :submit_new %> | <%=t :wineevents %></title>
 <% end %>
 
-<h1>New event</h1>
+<h1><%=t :submit_new %></h1><br/>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', events_path %>
+<%= link_to t(:back), events_path %>

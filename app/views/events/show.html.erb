@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <title> <%= @event.title %> | Weinevents</title>
+  <title> <%= @event.title %> | <%=t :wineevents %></title>
 <% end %>
 
 <div class="row">
@@ -14,29 +14,29 @@
 						</p>
             <br/>
             <p>
-               Closest city: <%= @event.sitecity.name %>
+               <%=t :event_sitecity_id %>: <%= @event.sitecity.name %>
             </p>
             <p>
               <% if @event.price == nil %>
               <% else %>
-                Price in EUR: <%= @event.price %>
+                <%=t :event_price %>: <%= @event.price %>
               <% end %>
             </p>
             <p>
               <%= raw @event.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
             </p>
             <p>
-  						Submitted by <%= @event.user.name %>
+  						<%=t :submitted_by %>: <%= @event.user.name %>
 						</p>
             <p>
-              Find more information <%= link_to 'here.', @event.website %>
+              <%=t :more_info %> <%= link_to t(:here), @event.website %>
             </p>
 						<%= image_tag @event.image %>
             <br/><br/>
 						<% if current_user == @event.user %> 
-							<%= link_to 'Edit', edit_event_path(@event) %> |
+							<%= link_to t(:edit), edit_event_path(@event) %> |
 						<% end %>
-						<%= link_to 'Back', events_path %>
+						<%= link_to t(:back), events_path %>
         </div>
     </div>
 </div>

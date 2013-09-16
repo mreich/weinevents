@@ -11,19 +11,19 @@
                 <div class="nav-collapse">
                     <ul class="nav">
                         <li>    
-                            <%= link_to 'Cities',  sitecities_path %>
+                            <%= link_to t(:nav_cities),  sitecities_path %>
                         </li>
                         <li>    
-                            <%= link_to 'About',  about_path %>
+                            <%= link_to t(:nav_about),  about_path %>
                         </li>
                     </ul>
                     <ul class="nav pull-right">
                       <% if user_signed_in? %>
-                        <li><%= link_to "New Event", new_event_path %></li>
-                        <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-                        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                        <li><%= link_to t(:new_event), new_event_path %></li>
+                        <li><%= link_to t(:edit_profile), edit_user_registration_path %></li>
+                        <li><%= link_to t(:logout), destroy_user_session_path, method: :delete %></li>
                       <% else %>
-                    <li><%= link_to "Login", new_user_session_path %></li>
+                    <li><%= link_to t(:login), new_user_session_path %></li>
                       <% end %>
             		</ul>
                 </div>

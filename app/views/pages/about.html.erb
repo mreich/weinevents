@@ -1,19 +1,19 @@
 <% content_for :head do %>
-  <title> About Weinevents | Weinevents</title>
+  <title> <%=t :about_wineevents %> | <%=t :wineevents %></title>
 <% end %>
 
-<h1>Über Weinvents</h1>
+<h1><%=t :about_wineevents %></h1>
 <br/>
 <p>
-  <%= link_to "Weinevents", "http://www.Weinevents.de" %>
-  macht es einfach, Weinevents in Deiner Stadt zu finden. 
+  <%= link_to t(:wineevents), root_path %>
+  <%=t :makes_it_easy %> 
 </p>
 <br/> <br/>
-Hier findest Du: <br/><br/>
+<%=t :here_you_find %><br/><br/>
 <ul>
-<li>Weinproben</li>
-<li>Weinseminare</li>
-<li>Weinfeste</li>
-<li>Weinparties</li>
+<li><%=t :winetastings %></li>
+<li><%=t :wineseminars %></li>
+<li><%=t :winefests %></li>
+<li><%=t :wineparties %></li>
 </ul>
 

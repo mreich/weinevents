@@ -6,16 +6,16 @@
   <% if params[:sitecity] %>
     <% content_for :head do %>
       <% @sitecity = Sitecity.find_by_url(params[:sitecity]) %>
-      <title>Weinevents in <%= @sitecity.name %> | Weinproben in <%= @sitecity.name %> | Weinseminare in <%= @sitecity.name %></title>
+      <title><%=t :wineevents_in %><%= @sitecity.name %> | <%=t :winetastings_in %> <%= @sitecity.name %> | <%=t :wineseminars_in %> <%= @sitecity.name %></title>
     <% end %>    
   <% end %>
 <% end %>
 
 
 <% if params[:sitecity] %>
-  <h1>Wine events in <%= @sitecity.name %></h1><br/> 
+  <h1><%=t :wineevents_in %> <%= @sitecity.name %></h1><br/> 
 <% else %>
-  <h1>The latest wine events</h1><br/>
+  <h1><%=t :latest_wineevents %></h1><br/>
 <% end %> 
 
 <table class="table table-striped">
@@ -39,9 +39,9 @@
 <%= will_paginate @events.current %><br />
 
 <% if params[:sitecity] %>
-  <h3>Past wine events in <%= @sitecity.name %></h3><br/> 
+  <h3><%=t :past_wineevents_in %><%= @sitecity.name %></h3><br/> 
 <% else %>
-  <h3>Past wine events</h3><br/>
+  <h3><%=t :past_wineevents %></h3><br/>
 <% end %> 
 
 <table class="table table-striped">
@@ -64,7 +64,7 @@
 
 <%= will_paginate @events.past %><br />
 
-<%= link_to "Add a new wine event now", new_event_path %>
+<%= link_to t(:add_new_event), new_event_path %>
 <br /><br />
 
 <div id="tag_cloud">
