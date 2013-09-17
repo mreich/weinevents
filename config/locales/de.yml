@@ -8,7 +8,7 @@ de:
   event_description: 'Beschreibung'
   event_startdatetime: 'Beginn'
   event_enddatetime: 'Ende'
-  event_price: 'Preis'
+  event_price: 'Preis in EUR'
   event_website: 'Webseite'
   event_location: 'Veranstaltungsort'
   event_street1: 'Straße'
