@@ -3,6 +3,7 @@
 
 	<%= f.input :name, label: t(:sitecity), as: :text, input_html: { rows: "1" } %>
 	<%= f.input :country_id, label: t(:sitecity_country_id), :collection => Country.all.collect %>
+	<%= f.input :state_id, label: t(:sitecity_state_id), :collection => State.all.collect %>
 	<%= f.input :description, label: t(:sitecity_description), as: :text, input_html: { rows: "20" } %>
 
   <div class="form-actions">

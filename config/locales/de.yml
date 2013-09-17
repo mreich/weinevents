@@ -60,6 +60,7 @@ de:
   nav_about: 'Über uns'
   choose_file: 'Datei auswählen'
   sitecity_country_id: 'Land'
+  sitecity_state_id: 'Land/Kanton'
 
   date:
     abbr_day_names:
