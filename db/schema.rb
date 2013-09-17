@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130913210410) do
+ActiveRecord::Schema.define(:version => 20130916224213) do
+
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "events", :force => true do |t|
     t.text     "description"
@@ -47,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20130913210410) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "url"
+    t.integer  "country_id"
   end
 
   add_index "sitecities", ["url"], :name => "index_sitecities_on_url", :unique => true
