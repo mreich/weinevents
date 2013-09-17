@@ -5,7 +5,8 @@ class Sitecity < ActiveRecord::Base
 
   has_many :events
 
-  belongs_to :country, :state
+  belongs_to :country 
+  belongs_to :state
 
   #Required for stringex URL conversion
   
