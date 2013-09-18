@@ -18,4 +18,8 @@ class Sitecity < ActiveRecord::Base
     url
   end
 
+  scope :germany, lambda { where('country_id = 1') }
+  scope :austria, lambda { where('country_id = 2') }
+  scope :switzerland, lambda { where('country_id = 3') }
+  
 end

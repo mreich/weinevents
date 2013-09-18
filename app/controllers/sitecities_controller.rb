@@ -2,7 +2,7 @@ class SitecitiesController < ApplicationController
   # GET /sitecities
   # GET /sitecities.json
   def index
-    @sitecities = Sitecity.all
+    @sitecities = Sitecity.order("name asc").page(params[:page]).per_page(20)
 
     respond_to do |format|
       format.html # index.html.erb

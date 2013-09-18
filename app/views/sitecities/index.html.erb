@@ -1,5 +1,8 @@
 <h1><%t :sitecities_index_title %></h1>
 
+
+<h2> <%=t :cities_germany %> </h2>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -11,12 +14,60 @@
   </thead>
 
   <tbody>
-    <%= render @sitecities %>
+    <%= render @sitecities.germany %>
   </tbody>
 
 </table>
 
 <br />
+
+<%= will_paginate @sitecities.germany %><br />
+
+
+<h2> <%=t :cities_austria %> </h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @sitecities.austria %>
+  </tbody>
+
+</table>
+
+<br />
+
+<%= will_paginate @sitecities.austria %><br />
+
+<h2> <%=t :cities_switzerland %> </h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @sitecities.switzerland %>
+  </tbody>
+
+</table>
+
+<br />
+
+<%= will_paginate @sitecities.switzerland %><br />
+
 
 
 <%= link_to t(:new_sitecity), new_sitecity_path %>
