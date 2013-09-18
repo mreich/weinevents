@@ -1,5 +1,5 @@
 class Sitecity < ActiveRecord::Base
-  attr_accessible :name, :description, :url, :country_id
+  attr_accessible :name, :description, :url, :country_id, :state_id
 
   validates :name, presence: true
 
