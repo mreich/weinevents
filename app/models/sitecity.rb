@@ -3,6 +3,8 @@ class Sitecity < ActiveRecord::Base
 
   validates :name, presence: true
 
+  validates_uniqueness_of :name
+
   has_many :events
 
   belongs_to :country 
