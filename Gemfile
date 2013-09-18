@@ -39,6 +39,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'stringex'
 gem 'acts-as-taggable-on'
 gem 'newrelic_rpm'
+gem 'thin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
