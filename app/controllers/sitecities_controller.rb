@@ -1,4 +1,7 @@
 class SitecitiesController < ApplicationController
+
+  before_filter :authenticate_user!, except: [:index, :show]
+  
   # GET /sitecities
   # GET /sitecities.json
   def index

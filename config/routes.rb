@@ -1,7 +1,9 @@
 Weinevents::Application.routes.draw do
-  resources :sitecities
+  
+
 
   resources :events
+
 
   devise_for :users
 
@@ -12,8 +14,9 @@ Weinevents::Application.routes.draw do
 
   get 'tags/:tag', to: 'events#index', as: :tag
 
-  get 'cities/:sitecity', to: 'events#index', as: :sitecity
-  put 'cities/:sitecity', to: 'events#index', as: :sitecity
+  get 'sitecities/:sitecity', to: 'events#index', as: :sitecity
+
+  resources :sitecities
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
