@@ -10,7 +10,7 @@
 	<%= f.input :price, label: t(:event_price), as: :decimal, input_html: { rows: "1", class: "span1" } %>
 	<%= f.input :website, label: t(:event_website), as: :text, input_html: { rows: "1", class: "span5" } %>
   <%= f.input :location, label: t(:event_location), as: :text, input_html: { rows: "1", class: "span5" } %>
-  <%= f.input :sitecity_id, label: t(:event_sitecity_id), :collection => Sitecity.all.collect %>
+  <%= f.input :sitecity_id, label: t(:event_sitecity_id), :collection => Sitecity.all(order: 'name') %>
   <%= f.input :street1, label: t(:event_street1), as: :text, input_html: { rows: "1", class: "span5" } %>
   <%= f.input :street2, label: t(:event_street2), as: :text, input_html: { rows: "1", class: "span5" } %>
   <%= f.input :city, label: t(:event_city), as: :text, input_html: { rows: "1", class: "span5" } %>
