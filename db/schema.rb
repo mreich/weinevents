@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130917211406) do
+ActiveRecord::Schema.define(:version => 20130923221252) do
 
   create_table "countries", :force => true do |t|
     t.string   "name"
@@ -43,10 +43,34 @@ ActiveRecord::Schema.define(:version => 20130917211406) do
     t.string   "postalcode"
     t.string   "email"
     t.string   "phone"
+    t.integer  "location_id"
   end
 
+  add_index "events", ["location_id"], :name => "index_events_on_location_id"
   add_index "events", ["url"], :name => "index_events_on_url", :unique => true
   add_index "events", ["user_id"], :name => "index_events_on_user_id"
+
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "street1"
+    t.string   "street2"
+    t.string   "city"
+    t.string   "postalcode"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "website"
+    t.integer  "sitecity_id"
+    t.integer  "user_id"
+    t.integer  "state_id"
+    t.integer  "country_id"
+    t.string   "url"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "locations", ["url"], :name => "index_locations_on_url", :unique => true
+  add_index "locations", ["user_id"], :name => "index_locations_on_user_id"
 
   create_table "sitecities", :force => true do |t|
     t.string   "name"

@@ -64,6 +64,21 @@ de:
   cities_germany: 'Städte in Deutschland'
   cities_austria: 'Städte in Österreich'
   cities_switzerland: 'Städte in der Schweiz'
+  location_name: 'Name'
+  location_description: 'Beschreibung'
+  location_sitecity_id: 'Im Umkreis von'
+  location_street1: 'Straße'
+  location_street2: 'Straße 2'
+  location_city: 'Stadt'
+  location_postalcode: 'Postleitzahl'
+  location_website: 'Webseite'
+  location_email: 'E-mail'
+  location_phone: 'Telefonnummer'
+  editing_location: 'Location ändern'
+  locations_index_title: 'Weinevent Locations'
+  new_location: 'Neue Event Location anlegen'
+  submit_new_location: 'Neue Event Location erstellen'
+  event_location_id: 'Event Location'
 
   date:
     abbr_day_names:

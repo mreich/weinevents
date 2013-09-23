@@ -1,0 +1,20 @@
+<%= simple_form_for(@location, html: { class: "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name, label: t(:location_name), as: :text, input_html: { rows: "1", class: "span8" } %>
+  <%= f.input :description, label: t(:location_description), as: :text, input_html: { rows: "20", class: "span8" } %>
+  <%= f.input :sitecity_id, label: t(:location_sitecity_id), :collection => Sitecity.all(order: 'name') %>
+  <%= f.input :street1, label: t(:location_street1), as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :street2, label: t(:location_street2), as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :city, label: t(:location_city), as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :postalcode, label: t(:location_postalcode), as: :text, input_html: { rows: "1", class: "span2" } %>
+  <%= f.input :country_id, label: t(:location_country_id), :collection => Country.all(order: 'name') %>
+  <%= f.input :state_id, label: t(:location_state_id), :collection => State.all(order: 'name') %>
+  <%= f.input :website, label: t(:location_website), as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :email, label: t(:location_email), as: :text, input_html: { rows: "1", class: "span5" } %>
+  <%= f.input :phone, label: t(:location_phone), as: :text, input_html: { rows: "1", class: "span5" } %>
+
+   <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>

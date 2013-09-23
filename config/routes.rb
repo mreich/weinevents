@@ -7,13 +7,18 @@ Weinevents::Application.routes.draw do
   get "pages/home"
 
   root :to => 'events#index'
+
   get 'about' => 'pages#about'
 
   get 'tags/:tag', to: 'events#index', as: :tag
 
+  get 'sitecities/new', to: 'sitecities#new'
   get 'sitecities/:sitecity', to: 'events#index', as: :sitecity
-
   resources :sitecities
+
+  get 'locations/new', to: 'locations#new'
+  get 'locations/:location', to: 'events#index', as: :location
+  resources :locations
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

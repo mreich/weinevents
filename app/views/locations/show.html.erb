@@ -1,0 +1,52 @@
+<% content_for :head do %>
+  <title> <%= @location.name %> | <%=t :winelocations %></title>
+<% end %>
+
+<div class="row">
+    <div class="span9 offset0">
+        <div class="well">
+            <h1>
+              <%= @location.name %>
+            </h1> 
+            <br/>
+            <p>
+              <%=t :created_by %>: <%= @location.user.name %>
+            </p>
+            <p>
+              <%= @location.description %>
+            </p>
+            <br/>
+            <p>
+               <%=t :location_sitecity_id %>: <%= @location.sitecity.name %>
+            </p>
+            <p>
+               <%=t :location_street1 %>: <%= @location.street1 %>
+            </p>
+            <p>
+               <%=t :location_street2 %>: <%= @location.street2 %>
+            </p>
+            <p>
+               <%=t :location_city %>: <%= @location.city %>
+            </p>
+            <p>
+               <%=t :location_postalcode %>: <%= @location.postalcode %>
+            </p>
+            <p>
+               <%=t :location_country %>: <%= @location.country.name %>
+            </p>
+            <p>
+               <%=t :location_email %>: <%= @location.email %>
+            </p>
+            <p>
+               <%=t :location_phone %>: <%= @location.phone %>
+            </p>
+            <p>
+              <%=t :location_website %> <%= @location.website %>
+            </p>
+            <% if current_user == @location.user %> 
+              <%= link_to t(:edit), edit_location_path(@location) %> |
+            <% end %>
+            <%= link_to t(:back), locations_path %>
+        </div>
+    </div>
+</div>

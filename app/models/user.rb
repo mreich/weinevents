@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :events, :dependent => :destroy 
+  has_many :locations, :dependent => :destroy
 end

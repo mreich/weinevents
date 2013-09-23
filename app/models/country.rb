@@ -5,6 +5,8 @@ class Country < ActiveRecord::Base
 
   has_many :sitecities
 
+	has_many :locations
+
   #Required for stringex URL conversion
   
   #acts_as_url :name

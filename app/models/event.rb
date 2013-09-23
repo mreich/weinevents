@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :title, :description, :website, :image, :price, :url, :tag_list, :sitecity_id, :enddatetime, :startdatetime, :location, :street1, :street2, :city, :postalcode, :email, :phone
+  attr_accessible :title, :description, :website, :image, :price, :url, :tag_list, :sitecity_id, :enddatetime, :startdatetime, :location, :street1, :street2, :city, :postalcode, :email, :phone, :location_id
 
   validates :user_id, :title, :description, presence: true
   has_attached_file :image, styles: { medium: "320x240>"}
@@ -10,8 +10,8 @@ class Event < ActiveRecord::Base
   validates :price, :format => { :with => /^\d+??(?:\.\d{0,2})?$/ }, :numericality => {:greater_than_or_equal_to => 0, :less_than => 1000}
 
   belongs_to :user
-
   belongs_to :sitecity
+  belongs_to :location
 
   
   #Required for stringex URL conversion
