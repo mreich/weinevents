@@ -6,11 +6,11 @@ class Sitecity < ActiveRecord::Base
   validates_uniqueness_of :name
 
   has_many :events
-
   has_many :locations
 
   belongs_to :country 
   belongs_to :state
+  belongs_to :user
 
   #Required for stringex URL conversion
   

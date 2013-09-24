@@ -1,5 +1,7 @@
 <tr>  
 	<td><%= link_to (location.name), location %></td>
-	<td><%= link_to t(:edit), edit_location_path(location) %></td>
-	<td><%= link_to t(:delete), location, method: :delete, data: { confirm: t(:sure) } %></td>
+	<% if current_user == location.user %>
+		<td><%= link_to t(:edit), edit_location_path(location) %></td>
+		<td><%= link_to t(:delete), location, method: :delete, data: { confirm: t(:sure) } %></td>
+	<% end %>
 </tr>

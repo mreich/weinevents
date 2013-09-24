@@ -4,7 +4,6 @@ class State < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :sitecities
-
   has_many :locations
 
   belongs_to :country

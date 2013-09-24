@@ -1,7 +1,3 @@
 class CountriesController < ApplicationController
-  def home
-  end
-
-  def about
-  end
+  before_filter :authenticate_user!, except: [:index, :show]
 end
