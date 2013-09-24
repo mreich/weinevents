@@ -1,14 +1,12 @@
 <tr>  
   <td>
-    <%= event.startdatetime.strftime('%_d. %b') %><br/>
-    <%= event.startdatetime.strftime('%H:%M') %> Uhr<br/>
+    <%= event.startdatetime.strftime('%_d.%b') %><br/>
+    <%= event.startdatetime.strftime('%H:%M') %>Uhr<br/>
   </td>
   <td>
     <strong><%= link_to (event.title), event %></strong> (<%= link_to (event.sitecity.name), event.sitecity %>)<br/>
     <%= truncate(event.description, :length => 220) %> <%= link_to 'Mehr', event %><br/><br/>
   </td>
-  <td></td>
-  <td></td>
   <td></td>
   <td></td>
   <% if current_user == event.user %>
