@@ -41,6 +41,7 @@ GEM
     bootstrap-will_paginate (0.0.6)
       will_paginate
     builder (3.0.4)
+    cancan (1.6.10)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.1)
@@ -152,6 +153,7 @@ DEPENDENCIES
   aws-sdk
   bootstrap-sass (~> 2.3.2.2)
   bootstrap-will_paginate (= 0.0.6)
+  cancan
   coffee-rails (~> 3.2.1)
   devise
   faker (= 1.1.2)

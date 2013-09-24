@@ -1,6 +1,6 @@
 <tr>  
   <td><%= link_to (sitecity.name), sitecity %></td>
-	<% if current_user == sitecity.user %>
+	<% if can? :update, @sitecity %>
 		<td><%= link_to t(:edit), edit_sitecity_path(sitecity) %></td>
 		<td><%= link_to t(:delete), sitecity, method: :delete, data: { confirm: t(:sure) } %></td>
 	<% end %>

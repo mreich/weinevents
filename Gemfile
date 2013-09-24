@@ -40,6 +40,7 @@ gem 'stringex'
 gem 'acts-as-taggable-on'
 gem 'newrelic_rpm'
 gem 'thin'
+gem "cancan"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
