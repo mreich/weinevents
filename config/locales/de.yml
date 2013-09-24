@@ -81,6 +81,7 @@ de:
   event_location_id: 'Event Location'
   location_country_id: 'Land'
   location_state_id: 'Bundesland/Kanton'
+  event_locations_in: 'Event Locations in'
 
   date:
     abbr_day_names:

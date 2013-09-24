@@ -5,7 +5,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.find_by_url(params[:location])
+    @locations = Location.order("name asc").page(params[:page]).per_page(20)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -37,7 +37,7 @@ class LocationsController < ApplicationController
 
   # GET /locations/1/edit
   def edit
-    @location = current_user.locations.find(params[:id])
+    @location = current_user.locations.find_by_url(params[:id])
   end
 
   # POST /locations
@@ -59,7 +59,7 @@ class LocationsController < ApplicationController
   # PUT /locations/1
   # PUT /locations/1.json
   def update
-    @location = current_user.locations.find(params[:id])
+    @location = current_user.locations.find_by_url(params[:id])
 
     respond_to do |format|
       if @location.update_attributes(params[:location])

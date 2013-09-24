@@ -84,3 +84,4 @@ en:
   event_location_id: 'Event location'
   location_country_id: 'Country'
   location_state_id: 'State'
+  event_locations_in: 'Event locations in'

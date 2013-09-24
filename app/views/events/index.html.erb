@@ -14,6 +14,17 @@
       <title><%=t :wineevents_in %><%= @sitecity.name %> | <%=t :winetastings_in %> <%= @sitecity.name %> | <%=t :wineseminars_in %> <%= @sitecity.name %></title>
     <% end %>    
   <% end %>
+  <% if params[:location] %>
+    <% content_for :head do %>
+      <% @location = Location.find_by_url(params[:location]) %>
+      <% if @events.any? %>
+        <meta name="robots" content="index, follow" />
+      <% else %>
+        <meta name="robots" content="noindex, follow" />
+      <% end %>
+      <title><%=t :wineevents_in %><%= @location.name %> | <%=t :winetastings_in %> <%= @location.name %> | <%=t :wineseminars_in %> <%= @location.name %></title>
+    <% end %>    
+  <% end %>
 <% end %>
 
 
@@ -43,6 +54,8 @@
 
 <%= will_paginate @events.current %><br />
 
+
+
 <% if params[:sitecity] %>
   <h3><%=t :past_wineevents_in %><%= @sitecity.name %></h3><br/> 
 <% else %>
@@ -68,6 +81,32 @@
 <br />
 
 <%= will_paginate @events.past %><br />
+
+<% if params[:sitecity] %>
+  <h3><%=t :event_locations_in %> <%= @sitecity.name %></h3><br/> 
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @sitecity.locations %>
+  </tbody>
+
+</table>
+
+<br />
+
+
+
+<% end %> 
+
 
 <%= link_to t(:add_new_event), new_event_path %>
 <br /><br />
