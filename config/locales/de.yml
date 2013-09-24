@@ -79,6 +79,8 @@ de:
   new_location: 'Neue Event Location anlegen'
   submit_new_location: 'Neue Event Location erstellen'
   event_location_id: 'Event Location'
+  location_country_id: 'Land'
+  location_state_id: 'Bundesland/Kanton'
 
   date:
     abbr_day_names:

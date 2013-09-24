@@ -82,3 +82,5 @@ en:
   new_location: 'Create new event location'
   submit_new_location: 'Create new event location'
   event_location_id: 'Event location'
+  location_country_id: 'Country'
+  location_state_id: 'State'

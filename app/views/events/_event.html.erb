@@ -6,7 +6,6 @@
   <td>
     <strong><%= link_to (event.title), event %></strong> (<%= link_to (event.sitecity.name), event.sitecity %>)<br/>
     <%= truncate(event.description, :length => 220) %> <%= link_to 'Mehr', event %><br/><br/>
-    <%= event.location %>, <%= event.street1 %>, <%= event.city %> <br/>
   </td>
   <td></td>
   <td></td>
