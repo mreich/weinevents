@@ -11,7 +11,7 @@ SitemapGenerator::Sitemap.create do
   add '/about_us', :changefreq => 'monthly', :priority => 0.1
   
   Sitecity.find_each do |sitecity|
-    add sitecity_path(sitecity), lastmod: sitecity.updated_at, :priority => 0.9
+    add sitecity_path(sitecity), :changefreq => 'daily', :priority => 0.9
   end
 
   # Put links creation logic here.
