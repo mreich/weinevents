@@ -27,95 +27,107 @@
   <% end %>
 <% end %>
 
-
 <% if params[:sitecity] %>
   <h1><%=t :wineevents_in %> <%= @sitecity.name %></h1><br/> 
 <% else %>
   <h1><%=t :latest_wineevents %></h1><br/>
 <% end %> 
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="span8">
 
-  <tbody>
-    <%= render @events.current %>
-  </tbody>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-</table>
+      <tbody>
+        <%= render @events.current %>
+      </tbody>
 
-<br />
+    </table>
 
-<%= will_paginate @events.current %><br />
+    <br />
 
-
-
-<% if params[:sitecity] %>
-  <h3><%=t :past_wineevents_in %><%= @sitecity.name %></h3><br/> 
-<% else %>
-  <h3><%=t :past_wineevents %></h3><br/>
-<% end %> 
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= render @events.past %>
-  </tbody>
-
-</table>
-
-<br />
-
-<%= will_paginate @events.past %><br />
-
-<% if params[:sitecity] %>
-  <h3><%=t :event_locations_in %> <%= @sitecity.name %></h3><br/> 
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= render @sitecity.locations %>
-  </tbody>
-
-</table>
-
-<br />
+    <%= will_paginate @events.current %><br />
 
 
 
-<% end %> 
+    <% if params[:sitecity] %>
+      <h3><%=t :past_wineevents_in %><%= @sitecity.name %></h3><br/> 
+    <% else %>
+      <h3><%=t :past_wineevents %></h3><br/>
+    <% end %> 
 
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-<%= link_to t(:add_new_event), new_event_path %>
-<br /><br />
+      <tbody>
+        <%= render @events.past %>
+      </tbody>
 
-<div id="tag_cloud">
-  <% tag_cloud Event.tag_counts, %w[s m l] do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
+    </table>
+
+    <br />
+
+    <%= will_paginate @events.past %><br />
+
+    <% if params[:sitecity] %>
+      <h3><%=t :event_locations_in %> <%= @sitecity.name %></h3><br/> 
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%= render @sitecity.locations %>
+        </tbody>
+
+      </table>
+      <br />
+
+    <% end %> 
+
+  </div>
+
+  <div class="span1">
+  </div>
+
+  <div class="span3">
+    <%= link_to t(:add_new_event), new_event_path, class: "btn btn-large btn-primary" %>
+    <br /><br />
+
+    <div id="tag_cloud">
+      <h2>Tags</h2>
+      <% tag_cloud Event.tag_counts, %w[s m l] do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <% end %>
+    </div>
+  </div>
+
 </div>
+
+
+
+
 
 <% unless user_signed_in? %>
   <% if params[:sitecity] %>
