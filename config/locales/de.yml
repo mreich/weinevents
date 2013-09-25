@@ -21,7 +21,6 @@ de:
   event_tag_list: 'Tags (mit Komma abgetrennt)'
   event_image: 'Bild hinzufügen'
   location_address: 'Adresse'
-
   editing_event: 'Ihre Veranstaltung ändern'
   winevents: Weinevents
   wineevents_in: 'Weinevents in '
@@ -86,7 +85,6 @@ de:
   from: 'von'
   to: 'bis'
   at: 'um'
-
   date:
     abbr_day_names:
     - So

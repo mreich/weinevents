@@ -1,7 +1,7 @@
 <tr>  
   <td>
-    <%= event.startdatetime.strftime('%_d.%b') %><br/>
-    <%= event.startdatetime.strftime('%H:%M') %>Uhr<br/>
+    <%= l(event.startdatetime, :format => '%_d.%b') %><br/>
+    <%= l(event.startdatetime, :format => '%H:%M') %>Uhr<br/>
   </td>
   <td>
     <strong><%= link_to (event.title), event %></strong> (<%= link_to (event.sitecity.name), event.sitecity %>)<br/>
