@@ -13,8 +13,12 @@ class EventsController < ApplicationController
       if params[:sitecity]
         @events = Event.where(sitecity_id: Sitecity.find_by_url(params[:sitecity])).order("startdatetime asc").page(params[:page]).per_page(20)
       else
-        @events = Event.order("startdatetime asc").page(params[:page]).per_page(20)
-      end      
+        if params[:location]
+          @events = Event.where(location_id: Location.find_by_url(params[:location])).order("startdatetime asc").page(params[:page]).per_page(20)
+        else
+          @events = Event.order("startdatetime asc").page(params[:page]).per_page(20)
+        end      
+      end
     end
 
 
