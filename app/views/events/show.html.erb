@@ -6,7 +6,7 @@
     <div class="span9 offset0">
           <h1><%= @event.title %></h1>
           
-          <% if Time.at(@event.startdatetime).to_date === Time.at(@event.enddatetime).to_date %>
+          <% if Time.at(@event.startdatetime).to_date == Time.at(@event.enddatetime).to_date %>
             <p>
               <%= @event.startdatetime.strftime('%_d. %B %Y (%a)') %> <%=t :from %> <%= @event.startdatetime.strftime('%H:%M')%> <%=t :to %> <%= @event.enddatetime.strftime('%H:%M')%> Uhr<br/>
             </p>
