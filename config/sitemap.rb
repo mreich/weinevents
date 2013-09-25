@@ -1,10 +1,11 @@
   # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://www.weinevents.de"
 
-#SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter
-#SitemapGenerator::Sitemap.sitemaps_host = ENV['SITEMAP_HOST']
-#SitemapGenerator::Sitemap.public_path = 'tmp/'
-#SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/weinevents/"
+SitemapGenerator::Sitemap.public_path = 'tmp/'
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
+
 
 SitemapGenerator::Sitemap.create do
   add '/about_us', :changefreq => 'monthly', :priority => 0.1
