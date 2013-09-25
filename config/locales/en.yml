@@ -11,7 +11,7 @@ en:
   event_description: 'Description'
   event_startdatetime: 'Starting at'
   event_enddatetime: 'Ending at'
-  event_price: 'Price in EUR'
+  event_price: 'Price'
   event_website: 'Website'
   event_location: 'Location name'
   event_street1: 'Street 1'
@@ -23,6 +23,7 @@ en:
   event_phone: 'Phone number for inquiries'
   event_tag_list: 'Tags (separated by commas)'
   event_image: 'Upload an image'
+  location_address: 'Address'
 
   editing_event: 'Update your event'
   wineevents_in: 'Wine events in '
@@ -85,3 +86,6 @@ en:
   location_country_id: 'Country'
   location_state_id: 'State'
   event_locations_in: 'Event locations in'
+  from: 'from'
+  to: 'to'
+  at: 'at'

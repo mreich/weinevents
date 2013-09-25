@@ -4,39 +4,51 @@
 
 <div class="row">
     <div class="span9 offset0">
-        <div class="well">
-            <h1>
-              <%= @event.title %>
-            </h1> 
-            <br/>
+          <h1><%= @event.title %></h1>
+          
+          <% if Time.at(@event.startdatetime).to_date === Time.at(@event.enddatetime).to_date %>
             <p>
-  						<%= @event.description %>
-						</p>
-            <br/>
-            <p>
-               <%=t :event_sitecity_id %>: <%= @event.sitecity.name %>
+              <%= @event.startdatetime.strftime('%_d. %B %Y (%a)') %> <%=t :from %> <%= @event.startdatetime.strftime('%H:%M')%> <%=t :to %> <%= @event.enddatetime.strftime('%H:%M')%> Uhr<br/>
             </p>
+          <% else %>
             <p>
-              <% if @event.price == nil %>
-              <% else %>
-                <%=t :event_price %>: <%= @event.price %>
-              <% end %>
+              <%= @event.startdatetime.strftime('%_d. %B %Y (%a)') %> <%=t :at %> <%= @event.startdatetime.strftime('%H:%M')%> Uhr <%=t :to %><br/>
+              <%= @event.enddatetime.strftime('%_d. %B %Y (%a)') %> <%=t :at %> <%= @event.enddatetime.strftime('%H:%M')%> Uhr  <br/>
             </p>
-            <p>
-              <%= raw @event.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-            </p>
-            <p>
-  						<%=t :submitted_by %>: <%= @event.user.name %>
-						</p>
-            <p>
-              <%=t :more_info %> <%= link_to t(:here), @event.website %>
-            </p>
-						<%= image_tag @event.image %>
-            <br/><br/>
-						<% if current_user == @event.user %> 
-							<%= link_to t(:edit), edit_event_path(@event) %> |
-						<% end %>
-						<%= link_to t(:back), events_path %>
-        </div>
+          <% end %>
+          <p>
+            <% if @event.price == nil %>
+            <% else %>
+              <%=t :event_price %>: <%= number_with_precision(@event.price, :precision => 2) %> EUR
+            <% end %>
+          </p>
+          <br/>
+          <p>
+            <strong><%= @event.location.name %></strong><br/>
+            <%= @event.location.street1 %><br/>
+            <%= @event.location.postalcode %> <%= @event.location.city %><br/>
+            <%= @event.location.phone %><br/>
+            <%= @event.location.email %><br/>
+          </p>
+          <br/>
+          <h4> <%=t :event_details %></h4>
+          <p>
+            Tags: <%= raw @event.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+          </p>
+          <br/>
+          <p>
+            <%= simple_format h @event.description %>
+          </p>
+          <br/>
+          <p>
+            <%=t :location_website %>: <%= link_to @event.website %>
+          </p>
+          <br/>
+					<%= image_tag @event.image, size: "150x100" %>
+          <br/><br/>
+					<% if current_user == @event.user %> 
+						<%= link_to t(:edit), edit_event_path(@event) %> |
+					<% end %>
+					<%= link_to t(:back), events_path %>
     </div>
 </div>
