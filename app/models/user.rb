@@ -20,4 +20,10 @@ class User < ActiveRecord::Base
     return !!self.roles.find_by_name(role)
   end
 
+  after_create :assign_default_role
+
+  def assign_default_role
+    self.role_ids = [2] #Default role is :event_organizer
+  end
+
 end
