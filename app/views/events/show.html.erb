@@ -40,12 +40,16 @@
             <%= simple_format h @event.description %>
           </p>
           <br/>
-          <p>
-            <%=t :location_website %>: <%= link_to @event.website %>
-          </p>
-          <br/>
-					<%= image_tag @event.image, size: "150x100" %>
-          <br/><br/>
+          <% if @event.website? %>
+            <p>
+              <%=t :location_website %>: <%= link_to @event.website %>
+            </p>
+            <br/>
+          <% end %>
+          <% if @event.image? %>
+  					<%= image_tag @event.image, size: "150x100" %>
+            <br/><br/>
+          <% end %>
 					<% if current_user == @event.user %> 
 						<%= link_to t(:edit), edit_event_path(@event) %> |
 					<% end %>
