@@ -89,3 +89,5 @@ en:
   from: 'from'
   to: 'to'
   at: 'at'
+  event_details: 'Event details'
+  location_details: 'Location details'

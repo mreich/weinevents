@@ -85,6 +85,8 @@ de:
   from: 'von'
   to: 'bis'
   at: 'um'
+  event_details: 'Event Infos'
+  location_details: 'Location Infos'
   date:
     abbr_day_names:
     - So
