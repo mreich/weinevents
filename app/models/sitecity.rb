@@ -23,5 +23,6 @@ class Sitecity < ActiveRecord::Base
   scope :germany, lambda { where('country_id = 1') }
   scope :austria, lambda { where('country_id = 2') }
   scope :switzerland, lambda { where('country_id = 3') }
-  
+  scope :hasevent, :joins => :events, :group => "events.sitecity_id", :having => "count(events.sitecity_id) > 0"
+
 end
