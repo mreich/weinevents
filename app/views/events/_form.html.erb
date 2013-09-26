@@ -3,17 +3,14 @@
   <%= f.full_error :image_file_size, class: "alert alert-error" %>
   <%= f.full_error :image_content_type, class: "alert alert-error" %>
 
-	<%= f.input :title, label: t(:event_title), as: :text, input_html: { rows: "1", class: "span8" } %>
+	<%= f.input :location_id, label: t(:event_location_id), :collection => Location.all(order: 'name'), hint: "#{link_to t(:new_location), new_location_path}" %>
+  <%= f.input :title, label: t(:event_title), as: :text, input_html: { rows: "1", class: "span8" } %>
 	<%= f.input :description, label: t(:event_description), as: :text, input_html: { rows: "20", class: "span8" } %>
   <%= f.input :startdatetime, label: t(:event_startdatetime), input_html: { class: "span1" } %>
   <%= f.input :enddatetime, label: t(:event_enddatetime), input_html: { class: "span1" } %>
 	<%= f.input :price, label: t(:event_price), as: :decimal, input_html: { rows: "1", class: "span1" } %>
 	<%= f.input :website, label: t(:event_website), as: :text, input_html: { rows: "1", class: "span5" } %>
-  <%= f.input :sitecity_id, label: t(:event_sitecity_id), :collection => Sitecity.all(order: 'name') %>
-  <%= f.input :location_id, label: t(:event_location_id), :collection => Location.all(order: 'name'), hint: "#{link_to t(:new_location), new_location_path}" %>
-
   <%= f.input :tag_list, label: t(:event_tag_list), input_html: { rows: "1", class: "span5" } %>
-  
 	<%= f.input :image, label: t(:event_image) %>
 
   <div class="form-actions">

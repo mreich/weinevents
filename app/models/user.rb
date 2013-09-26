@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
     return !!self.roles.find_by_name(role)
   end
 
+  #Assign default role to new user:
   after_create :assign_default_role
 
   def assign_default_role

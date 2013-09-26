@@ -20,4 +20,13 @@ class Location < ActiveRecord::Base
     url
   end
 
+  #Assign state and country based on selected sitecity: 
+
+  before_validation :assign_state_and_country
+
+  def assign_state_and_country
+    self.state_id = sitecity.state_id
+    self.country_id = sitecity.country_id
+  end
+
 end

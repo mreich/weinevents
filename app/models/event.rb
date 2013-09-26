@@ -29,4 +29,12 @@ class Event < ActiveRecord::Base
 
   scope :past, lambda { where('startdatetime < ?', Time.now) }
 
+  #Assign sitecity based on selected location: 
+
+  before_validation :assign_sitecity
+
+  def assign_sitecity
+    self.sitecity_id = location.sitecity_id
+  end
+
 end
