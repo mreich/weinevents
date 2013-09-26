@@ -1,6 +1,6 @@
 <% if params[:tag] %>
   <% content_for :head do %>
-    <title> TAG Weinevents</title>
+    <title> <%= params[:tag] %> Weinevents</title>
   <% end %>
 <% else %>
   <% if params[:sitecity] %>
@@ -30,7 +30,11 @@
 <% if params[:sitecity] %>
   <h1><%=t :wineevents_in %> <%= @sitecity.name %></h1><br/> 
 <% else %>
-  <h1><%=t :latest_wineevents %></h1><br/>
+  <% if params[:tag] %>
+    <h1><%= params[:tag] %> <%=t :wineevents %></h1><br/> 
+  <% else %>
+    <h1><%=t :latest_wineevents %></h1><br/>
+  <% end %>
 <% end %> 
 
 <div class="row">
@@ -61,7 +65,11 @@
     <% if params[:sitecity] %>
       <h3><%=t :past_wineevents_in %><%= @sitecity.name %></h3><br/> 
     <% else %>
-      <h3><%=t :past_wineevents %></h3><br/>
+      <% if params[:tag] %>
+        <h3><%=t :past_f_p %> <%= params[:tag] %> <%=t :wineevents %></h3><br/> 
+      <% else %>
+        <h3><%=t :past_wineevents %></h3><br/>
+      <% end %>
     <% end %> 
 
     <table class="table table-striped">

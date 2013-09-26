@@ -27,7 +27,7 @@ en:
 
   editing_event: 'Update your event'
   wineevents_in: 'Wine events in '
-  winevents: 'Wine Events'
+  wineevents: 'Wine Events'
   winetastings_in: 'Wine tastings in '
   wineseminars_in: 'Wine seminars in '
   latest_wineevents: 'The latest wine events'
@@ -91,3 +91,4 @@ en:
   at: 'at'
   event_details: 'Event details'
   location_details: 'Location details'
+  past_f_p: 'Past'

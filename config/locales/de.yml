@@ -22,7 +22,7 @@ de:
   event_image: 'Bild hinzufügen'
   location_address: 'Adresse'
   editing_event: 'Ihre Veranstaltung ändern'
-  winevents: Weinevents
+  wineevents: Weinevents
   wineevents_in: 'Weinevents in '
   winetastings_in: 'Weinproben in '
   wineseminars_in: 'Weinseminare in '
@@ -87,6 +87,7 @@ de:
   at: 'um'
   event_details: 'Event Infos'
   location_details: 'Location Infos'
+  past_f_p: 'Vergangene'
   date:
     abbr_day_names:
     - So

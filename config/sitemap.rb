@@ -14,6 +14,10 @@ SitemapGenerator::Sitemap.create do
     add sitecity_path(sitecity), :changefreq => 'daily', :priority => 0.9
   end
 
+  Tag.find_each do |tag|
+    add tag_path(tag.name), :changefreq => 'weekly', :priority => 0.8
+  end
+
   # Put links creation logic here.
   #
   # The root path '/' and sitemap index file are added automatically for you.
