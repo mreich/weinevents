@@ -46,7 +46,7 @@ class Event < ActiveRecord::Base
   after_create :tweet_event
 
   def tweet_event
-    #return '' if not Rails.env.production?
+    return '' if not Rails.env.production?
     bitly = Bitly.client
     u = bitly.shorten("http://www.weinevents.de/events/#{url}")
     u = u.short_url
