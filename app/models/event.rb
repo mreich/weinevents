@@ -12,7 +12,6 @@ class Event < ActiveRecord::Base
   belongs_to :user
   belongs_to :sitecity
   belongs_to :location
-
   
   #Required for stringex URL conversion
   
@@ -35,6 +34,24 @@ class Event < ActiveRecord::Base
 
   def assign_sitecity
     self.sitecity_id = location.sitecity_id
+  end
+  
+  # Send tweet to Twitter
+  def send_tweet(tweet)
+    client = Twitter::Client.new
+    client.update(tweet)   
+  end
+
+  # Before creating an event, shorten the URL with bitly and then tweet the Event (only on production)
+  after_create :tweet_event
+
+  def tweet_event
+    return '' if not Rails.env.production?
+    bitly = Bitly.client
+    u = bitly.shorten("http://www.weinevents.de/events/#{url}")
+    u = u.short_url
+    tweet = title + " " + u
+    send_tweet(tweet)
   end
 
 end
