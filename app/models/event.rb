@@ -12,6 +12,7 @@ class Event < ActiveRecord::Base
   belongs_to :user
   belongs_to :sitecity
   belongs_to :location
+  belongs_to :sitecity
   
   #Required for stringex URL conversion
   
@@ -50,7 +51,7 @@ class Event < ActiveRecord::Base
     bitly = Bitly.client
     u = bitly.shorten("http://www.weinevents.de/events/#{url}")
     u = u.short_url
-    tweet = "Neues #Weinevent in ##{sitecity.name}: " + title + " " + u
+    tweet = "Neues #Wein Event in ##{sitecity.name}: " + title + " " + u
     send_tweet(tweet)
   end
 

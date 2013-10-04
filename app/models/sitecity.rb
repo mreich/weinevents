@@ -7,6 +7,7 @@ class Sitecity < ActiveRecord::Base
 
   has_many :events
   has_many :locations
+  has_many :events, :through => :locations
 
   belongs_to :country 
   belongs_to :state
@@ -20,8 +21,12 @@ class Sitecity < ActiveRecord::Base
     url
   end
 
+  default_scope order('name ASC')
+
   scope :germany, lambda { where('country_id = 1') }
   scope :austria, lambda { where('country_id = 2') }
   scope :switzerland, lambda { where('country_id = 3') }
   
+  #Sitecities with at least one event
+  scope :has_event, ->(n = 1) { includes(:events).select { |w| w.events.size >= n } }
 end
