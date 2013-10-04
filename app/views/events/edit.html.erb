@@ -1,4 +1,9 @@
-<h1><%=t :editing_event%></h1><br/>
+<% content_for :head do %>
+	<meta name="robots" content="noindex, follow" />
+<% end %>    
+
+
+  <h1><%=t :editing_event%></h1><br/>
 
 <%= render 'form' %>
 
