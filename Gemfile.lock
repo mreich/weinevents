@@ -224,4 +224,4 @@ DEPENDENCIES
   thin
   twitter
   uglifier (>= 1.0.3)
-  will_paginate (~> 3.0.5)
+  will_paginate (= 3.0.5)
