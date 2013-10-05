@@ -1,11 +1,13 @@
 $navbarBackgroundHighlight: white;
 $navbarBackground: white;
 $btnPrimaryBackground: purple;
+$linkColor: #80006e;
 
 @import 'bootstrap';
 body{
     padding-top: 60px;
 }
+
 
 @import 'bootstrap-responsive';
 
