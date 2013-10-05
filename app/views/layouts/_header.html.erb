@@ -9,14 +9,16 @@
              <a class="brand" href="/">Weinevents</a>
 
                 <div class="nav-collapse">
-                    <ul class="nav">
-                        <li>    
-                            <%= link_to t(:nav_cities),  sitecities_path %>
-                        </li>
-                        <li>    
-                            <%= link_to t(:nav_about),  about_path %>
-                        </li>
-                    </ul>
+                    <% if user_signed_in? && current_user.role?(:super_admin) %>
+                        <ul class="nav">
+                            <li>    
+                                <%= link_to t(:nav_cities),  sitecities_path %>
+                            </li>
+                            <li>    
+                                <%= link_to t(:nav_about),  about_path %>
+                            </li>
+                        </ul>
+                    <% end %>
                     <ul class="nav pull-right">
                       <% if user_signed_in? %>
                         <li><%= link_to t(:new_event), new_event_path %></li>
