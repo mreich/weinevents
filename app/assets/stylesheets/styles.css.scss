@@ -1,7 +1,9 @@
+$redwine: #80006e;
+
 $navbarBackgroundHighlight: white;
 $navbarBackground: white;
 $btnPrimaryBackground: purple;
-$linkColor: #80006e;
+$linkColor: $redwine;
 
 @import 'bootstrap';
 body{
