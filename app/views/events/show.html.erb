@@ -46,7 +46,7 @@
           <br/>
           <% if @event.website? %>
             <p>
-              <%=t :location_website %>: <%= link_to @event.website %>
+              <%=t :location_website %>: <%= link_to @event.website, @event.website %>
             </p>
             <br/>
           <% end %>
