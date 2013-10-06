@@ -14,7 +14,7 @@ $linkColor: $redwine;
 
 
 body{
-    padding-top: 120px;
+    padding-top: 100px;
 }
 
 @import 'bootstrap-responsive';
@@ -55,10 +55,15 @@ h3 {
 .navbar .brand {
   color: $redwine;
   font-size: 38.5px;
-  padding: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   font-weight: bold;
 }
 
 .navbar .nav {
-  padding-top: 35px;
+  padding-top: 25px;
 }
+
+.navbar .nav > li > a {
+  font-size: 16.5px;
+  }
