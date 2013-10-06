@@ -13,11 +13,6 @@ body{
 
 @import 'bootstrap-responsive';
 
-.navbar-inner{
-    @include box-shadow(none !important);
-    border: 0;
-}
-
 .footer{
     margin-top: 50px;
     color: $grayLight;
@@ -59,9 +54,4 @@ h3 {
 
 .navbar .nav {
   padding: 15px;
-}
-
-.navbar-inner {
-  -webkit-box-shadow: 0 1px 10px #dddddd !important;
-  box-shadow: 0 1px 10px #dddddd !important;
 }
