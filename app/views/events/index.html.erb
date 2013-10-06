@@ -1,28 +1,34 @@
 <% if params[:tag] %>
   <% content_for :head do %>
-    <title> <%= params[:tag] %> Weinevents</title>
+    <title> <%= params[:tag] %> <%=t :wineevents %></title>
+    <meta name="keywords" content="<%= params[:tag] %> <%=t :wineevents %>, <%= params[:tag] %> <%=t :winetastings %>, <%= params[:tag] %> <%=t :wineseminars %>" />
+    <meta name="description" content="<%=t :events_index_tag_meta_desc %> <%= params[:tag] %>" />
   <% end %>
 <% else %>
   <% if params[:sitecity] %>
     <% content_for :head do %>
       <% @sitecity = Sitecity.find_by_url(params[:sitecity]) %>
+      <title><%=t :wineevents_in %><%= @sitecity.name %> | <%=t :winetastings_in %> <%= @sitecity.name %> | <%=t :wineseminars_in %> <%= @sitecity.name %></title>
       <% if @events.any? %>
         <meta name="robots" content="index, follow" />
       <% else %>
         <meta name="robots" content="noindex, follow" />
       <% end %>
-      <title><%=t :wineevents_in %><%= @sitecity.name %> | <%=t :winetastings_in %> <%= @sitecity.name %> | <%=t :wineseminars_in %> <%= @sitecity.name %></title>
+      <meta name="keywords" content="<%=t :wineevents_in %><%= @sitecity.name %>, <%=t :winetastings_in %> <%= @sitecity.name %>, <%=t :wineseminars_in %> <%= @sitecity.name %>" />
+      <meta name="description" content="<%=t :events_index_sitecity_meta_desc_1 %> <%= @sitecity.name %><%=t :events_index_sitecity_meta_desc_2 %> <%= @sitecity.name %>"  />
     <% end %>    
   <% end %>
   <% if params[:location] %>
     <% content_for :head do %>
       <% @location = Location.find_by_url(params[:location]) %>
+      <title><%=t :wineevents_in %><%= @location.name %> | <%=t :winetastings_in %> <%= @location.name %> | <%=t :wineseminars_in %> <%= @location.name %></title>
       <% if @events.any? %>
         <meta name="robots" content="index, follow" />
       <% else %>
         <meta name="robots" content="noindex, follow" />
       <% end %>
-      <title><%=t :wineevents_in %><%= @location.name %> | <%=t :winetastings_in %> <%= @location.name %> | <%=t :wineseminars_in %> <%= @location.name %></title>
+      <meta name="keywords" content="<%=t :wineevents_in %><%= @location.name %>, <%=t :winetastings_in %> <%= @location.name %>, <%=t :wineseminars_in %> <%= @location.name %>" />
+      <meta name="description" content="<%=t :events_index_location_meta_desc %> <%= @location.name %>" />
     <% end %>    
   <% end %>
 <% end %>

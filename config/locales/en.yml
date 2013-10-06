@@ -94,3 +94,8 @@ en:
   past_f_p: 'Past'
   sitecity_picker: 'Find your city'
   select: 'select'
+  events_index_meta_desc: 'Searching for a great wine event? Here you will find wine tastings, wine seminars, wine fests, and other wine related events in your city.'
+  events_index_tag_meta_desc: 'Searching for a great wine event? Here you will find wine events with the tag'
+  events_index_sitecity_meta_desc_1: 'Searching for a great wine event in'
+  events_index_sitecity_meta_desc_2: '? Here you will find wine tastings, wine seminars, wine fests, and other wine related events in'
+  events_index_location_meta_desc: 'Searching for a great wine event? Here you will find wine events organized by'

@@ -5,6 +5,8 @@
       <%= content_for(:head) %>
     <% else %>
       <title>Weinevents | Weinproben, Weinfeste, Weinparties und andere Weinevents</title>
+      <meta name="keywords" content="<%=t :wineevents %>, <%=t :winetastings %>, <%=t :wineseminars %>" />
+      <meta name="description" content="<%=t :events_index_meta_desc %>" />
     <% end %>
 
     <%= stylesheet_link_tag    "application", :media => "all" %>

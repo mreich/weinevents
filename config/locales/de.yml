@@ -90,6 +90,11 @@ de:
   past_f_p: 'Vergangene'
   sitecity_picker: 'Stadt auswählen'
   select: 'auswählen'
+  events_index_meta_desc: 'Auf der Suche nach einem tollen Weinevent? Hier finden Sie Weinproben, -seminare und -feste in Ihrer Stadt.'
+  events_index_tag_meta_desc: 'Auf der Suche nach einem tollen Weinevent? Hier finden Sie alle Weinevents mit dem Tag'
+  events_index_sitecity_meta_desc_1: 'Auf der Suche nach einem tollen Weinevent in'
+  events_index_sitecity_meta_desc_2: '? Hier finden Sie Weinproben, -seminare und -feste in'
+  events_index_location_meta_desc: 'Auf der Suche nach einem tollen Weinevent? Hier finden Sie alle Weinevents von'
   date:
     abbr_day_names:
     - So
