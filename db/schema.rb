@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130924204939) do
+ActiveRecord::Schema.define(:version => 20131006202115) do
 
   create_table "countries", :force => true do |t|
     t.string   "name"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(:version => 20130924204939) do
     t.string   "url"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "locations", ["url"], :name => "index_locations_on_url", :unique => true
@@ -84,6 +86,8 @@ ActiveRecord::Schema.define(:version => 20130924204939) do
     t.string   "url"
     t.integer  "country_id"
     t.integer  "state_id"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "sitecities", ["url"], :name => "index_sitecities_on_url", :unique => true

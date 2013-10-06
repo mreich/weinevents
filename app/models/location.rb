@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-  attr_accessible :city, :description, :email, :name, :phone, :postalcode, :sitecity_id, :street1, :street2, :user_id, :website, :state_id, :country_id, :url
+  attr_accessible :city, :description, :email, :name, :phone, :postalcode, :sitecity_id, :street1, :street2, :user_id, :website, :state_id, :country_id, :url, :latitude, :longitude 
 
 	validates :name, :street1, :postalcode, :city, :user_id, :sitecity_id, :state_id, :country_id, presence: true
 
@@ -28,5 +28,14 @@ class Location < ActiveRecord::Base
     self.state_id = sitecity.state_id
     self.country_id = sitecity.country_id
   end
+
+  def combined_address # required for Geocoder
+    address = [street1, city, postalcode, state, country.name].compact.join(', ')
+  end
+
+  geocoded_by :combined_address
+
+  after_validation :geocode # auto-fetch coordinates
+
 
 end

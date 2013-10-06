@@ -29,4 +29,12 @@ class Sitecity < ActiveRecord::Base
   
   #Sitecities with at least one event
   scope :has_event, ->(n = 1) { includes(:events).select { |w| w.events.size >= n } }
+
+  def combined_address # required for Geocoder
+    address = [name, state.name, country.name].compact.join(', ')
+  end
+
+  geocoded_by :combined_address
+
+  after_validation :geocode # auto-fetch coordinates
 end

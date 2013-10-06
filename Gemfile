@@ -46,6 +46,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'twitter'
 gem 'bitly', "~> 0.9.0"
+gem 'geocoder'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
