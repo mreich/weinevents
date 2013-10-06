@@ -5,6 +5,7 @@ $navbarBackground: white;
 $btnPrimaryBackground: purple;
 $linkColor: $redwine;
 
+
 @import 'bootstrap';
 body{
     padding-top: 60px;
@@ -31,4 +32,36 @@ body{
   .s { font-size: 0.8em; }
   .m { font-size: 1.2em; }
   .l { font-size: 1.8em; }
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 28.5px;
+}
+
+h2 {
+  font-size: 24.5px;
+}
+
+h3 {
+  font-size: 20.5px;
+}
+
+.navbar .brand {
+  color: $redwine;
+  font-size: 38.5px;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.navbar .nav {
+  padding: 15px;
+}
+
+.navbar-inner {
+  -webkit-box-shadow: 0 1px 10px #dddddd !important;
+  box-shadow: 0 1px 10px #dddddd !important;
 }
