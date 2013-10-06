@@ -1,14 +1,20 @@
-$redwine: #80006e;
+$redwine: #790000;
+$label_white: #FFFAFA;
+$label_grey: #DCDCDC;
+
 
 $navbarBackgroundHighlight: white;
 $navbarBackground: white;
-$btnPrimaryBackground: purple;
+$btnPrimaryBackground: $redwine;
 $linkColor: $redwine;
 
 
 @import 'bootstrap';
+
+
+
 body{
-    padding-top: 60px;
+    padding-top: 120px;
 }
 
 @import 'bootstrap-responsive';
@@ -22,7 +28,7 @@ body{
 }
 
 .tag_cloud {
-  width: 400px;
+  width: auto;
   line-height: 1.6em;
   .s { font-size: 0.8em; }
   .m { font-size: 1.2em; }
@@ -31,6 +37,7 @@ body{
 
 h1, h2, h3, h4 {
   font-weight: normal;
+  font-family: 'Times New Roman';
 }
 
 h1 {
@@ -48,10 +55,10 @@ h3 {
 .navbar .brand {
   color: $redwine;
   font-size: 38.5px;
-  padding: 20px;
+  padding: 40px;
   font-weight: bold;
 }
 
 .navbar .nav {
-  padding: 15px;
+  padding-top: 35px;
 }

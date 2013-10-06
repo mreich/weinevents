@@ -33,7 +33,7 @@
   <% if params[:tag] %>
     <h1><%= params[:tag] %> <%=t :wineevents %></h1><br/> 
   <% else %>
-    <h1><%=t :latest_wineevents %></h1><br/>
+    <h1><%=t :latest_wineevents %></h1>
   <% end %>
 <% end %> 
 
@@ -55,12 +55,12 @@
 
 
     <% if params[:sitecity] %>
-      <h3><%=t :past_wineevents_in %><%= @sitecity.name %></h3><br/> 
+      <h3><%=t :past_wineevents_in %><%= @sitecity.name %></h3>
     <% else %>
       <% if params[:tag] %>
-        <h3><%=t :past_f_p %> <%= params[:tag] %> <%=t :wineevents %></h3><br/> 
+        <h3><%=t :past_f_p %> <%= params[:tag] %> <%=t :wineevents %></h3>
       <% else %>
-        <h3><%=t :past_wineevents %></h3><br/>
+        <h3><%=t :past_wineevents %></h3>
       <% end %>
     <% end %> 
 
