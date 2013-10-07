@@ -6,6 +6,9 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+    #Trying to pick sitecity based on closest sitecity to user. 
+    user_location = request.location
+    @sitecity = Sitecity.near([user_location.latitude, user_location.longitude], 100).order("distance").first
 
     if params[:tag]
       @events = Event.tagged_with(params[:tag]).order("startdatetime asc").page(params[:page]).per_page(20)
@@ -16,7 +19,11 @@ class EventsController < ApplicationController
         if params[:location]
           @events = Event.where(location_id: Location.find_by_url(params[:location])).order("startdatetime asc").page(params[:page]).per_page(20)
         else
-          @events = Event.order("startdatetime asc").page(params[:page]).per_page(20)
+          if Sitecity.near([user_location.latitude, user_location.longitude], 50).any?
+            @events = Event.where(sitecity_id: @sitecity_id).order("startdatetime asc").page(params[:page]).per_page(20)
+          else
+            @events = Event.order("startdatetime asc").page(params[:page]).per_page(20)
+          end
         end      
       end
     end
