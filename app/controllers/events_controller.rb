@@ -19,9 +19,9 @@ class EventsController < ApplicationController
         if params[:location]
           @events = Event.where(location_id: Location.find_by_url(params[:location])).order("startdatetime asc").page(params[:page]).per_page(20)
         else
-          if Sitecity.near([user_location.latitude, user_location.longitude], 50).any?
-            @events = Event.where(sitecity_id: @sitecity_id).order("startdatetime asc").page(params[:page]).per_page(20)
-          else
+          #if Sitecity.near([user_location.latitude, user_location.longitude], 50).any?
+          #  @events = Event.where(sitecity_id: @sitecity_id).order("startdatetime asc").page(params[:page]).per_page(20)
+          #else
             @events = Event.order("startdatetime asc").page(params[:page]).per_page(20)
           end
         end      
