@@ -81,6 +81,7 @@ de:
   event_location_id: 'Event Location'
   location_country_id: 'Land'
   location_state_id: 'Bundesland/Kanton'
+  location_map: 'Hier finden Sie das Weinevent:'
   event_locations_in: 'Event Locations in'
   from: 'von'
   to: 'bis'

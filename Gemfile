@@ -47,6 +47,7 @@ gem 'fog'
 gem 'twitter'
 gem 'bitly', "~> 0.9.0"
 gem 'geocoder'
+gem 'gmaps4rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

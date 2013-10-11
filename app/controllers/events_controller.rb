@@ -39,6 +39,7 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find_by_url(params[:id])
+    @json = Location.where(id: @event.location_id).to_gmaps4rails
 
     respond_to do |format|
       format.html # show.html.erb

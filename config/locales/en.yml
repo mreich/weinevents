@@ -85,6 +85,7 @@ en:
   event_location_id: 'Event location'
   location_country_id: 'Country'
   location_state_id: 'State'
+  location_map: 'Event location map'
   event_locations_in: 'Event locations in'
   from: 'from'
   to: 'to'

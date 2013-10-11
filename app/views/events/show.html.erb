@@ -63,8 +63,11 @@
           <p>
             <%= simple_format h @event.location.description %>
           </p>
-
-					
+          <br/>
+          <h4> <%=t :location_map %> </h4>
+          <p>
+              <%= gmaps4rails(@json) %>
+          </p>
 					<%= link_to t(:back), events_path %>
     </div>
 </div>
