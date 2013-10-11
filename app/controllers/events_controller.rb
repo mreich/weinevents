@@ -23,7 +23,7 @@ class EventsController < ApplicationController
           #  @events = Event.where(sitecity_id: @sitecity_id).order("startdatetime asc").page(params[:page]).per_page(20)
           #else
             @events = Event.order("startdatetime asc").page(params[:page]).per_page(20)
-          end
+          #end
         end      
       end
     end
