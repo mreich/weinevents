@@ -12,18 +12,14 @@
             </p>
           <% else %>
             <p>
-              <time itemprop="startDate">
-                <%= l(@event.startdatetime, :format =>'%_d. %B %Y (%a)') %> <%=t :at %> <%= l(@event.startdatetime, :format =>'%H:%M')%> Uhr <%=t :to %><br/>
-              </time>
-              <time itemprop="endDate">
-               <%= l(@event.enddatetime, :format => '%_d. %B %Y (%a)') %> <%=t :at %> <%= l(@event.enddatetime, :format => '%H:%M')%> Uhr  <br/>
-               </time>
+              <time itemprop="startDate"><%= l(@event.startdatetime, :format =>'%_d. %B %Y (%a)') %></time> <%=t :at %> <%= l(@event.startdatetime, :format =>'%H:%M')%> Uhr <%=t :to %><br/>
+              <time itemprop="endDate"><%= l(@event.enddatetime, :format => '%_d. %B %Y (%a)') %></time> <%=t :at %> <%= l(@event.enddatetime, :format => '%H:%M')%> Uhr  <br/>
             </p>
           <% end %>
-          <p itemprop="Price">
+          <p>
             <% if @event.price == nil %>
             <% else %>
-              <%=t :event_price %>: <%= number_with_precision(@event.price, :precision => 2) %> <span itemprop="currency" content="EUR" />EUR
+              <%=t :event_price %>: <span itemprop="Price"><%= number_with_precision(@event.price, :precision => 2) %></span> <span itemprop="currency" content="EUR" />EUR
             <% end %>
           </p>
           <br/>
