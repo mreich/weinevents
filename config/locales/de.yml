@@ -72,6 +72,7 @@ de:
   location_city: 'Stadt'
   location_postalcode: 'Postleitzahl'
   location_website: 'Webseite'
+  location_eventpage: 'Unterseite mit Events'
   location_email: 'E-mail'
   location_phone: 'Telefonnummer'
   editing_location: 'Location ändern'

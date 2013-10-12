@@ -76,6 +76,7 @@ en:
   location_city: 'City'
   location_postalcode: 'Postal code'
   location_website: 'Website'
+  location_eventpage: 'URL of event listing page'
   location_email: 'E-mail'
   location_phone: 'Phone'
   editing_location: 'Edit location'
