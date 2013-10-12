@@ -3,8 +3,8 @@
 <% end %>
 
 <div class="row">
-    <div class="span9 offset0">
-          <h1><%= @event.title %></h1>
+    <div class="span9 offset0", itemscope itemtype="http://data-vocabulary.org/Event">
+          <h1 itemprop="summary"><%= @event.title %></h1>
           
           <% if @event.startdatetime.to_date === @event.enddatetime.to_date %>
             <p>
@@ -12,21 +12,29 @@
             </p>
           <% else %>
             <p>
-              <%= l(@event.startdatetime, :format =>'%_d. %B %Y (%a)') %> <%=t :at %> <%= l(@event.startdatetime, :format =>'%H:%M')%> Uhr <%=t :to %><br/>
-              <%= l(@event.enddatetime, :format => '%_d. %B %Y (%a)') %> <%=t :at %> <%= l(@event.enddatetime, :format => '%H:%M')%> Uhr  <br/>
+              <time itemprop="startDate">
+                <%= l(@event.startdatetime, :format =>'%_d. %B %Y (%a)') %> <%=t :at %> <%= l(@event.startdatetime, :format =>'%H:%M')%> Uhr <%=t :to %><br/>
+              </time>
+              <time itemprop="endDate">
+               <%= l(@event.enddatetime, :format => '%_d. %B %Y (%a)') %> <%=t :at %> <%= l(@event.enddatetime, :format => '%H:%M')%> Uhr  <br/>
+               </time>
             </p>
           <% end %>
-          <p>
+          <p itemprop="Price">
             <% if @event.price == nil %>
             <% else %>
-              <%=t :event_price %>: <%= number_with_precision(@event.price, :precision => 2) %> EUR
+              <%=t :event_price %>: <%= number_with_precision(@event.price, :precision => 2) %> <span itemprop="currency" content="EUR" />EUR
             <% end %>
           </p>
           <br/>
-          <p>
-            <strong><%= @event.location.name %></strong><br/>
-            <%= @event.location.street1 %><br/>
-            <%= @event.location.postalcode %> <%= @event.location.city %><br/>
+          <p itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
+            <strong itemprop="name">
+              <%= @event.location.name %>
+            </strong><br/>
+            <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+              <span itemprop="street-address"><%= @event.location.street1 %></span><br/>
+              <%= @event.location.postalcode %> <span itemprop="locality"><%= @event.location.city %></span><br/>
+            </span>
             <%= @event.location.phone %><br/>
             <%= @event.location.email %><br/>
           </p>
@@ -40,7 +48,7 @@
           <p>
             Tags: <%= raw @event.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
           </p>
-          <p>
+          <p itemprop="description">
             <%= simple_format h @event.description %>
           </p>
           <br/>
@@ -51,7 +59,9 @@
             <br/>
           <% end %>
           <% if @event.image? %>
-  					<%= image_tag @event.image, size: "150x100" %>
+  					<span itemprop="photo">
+              <%= image_tag @event.image, size: "150x100" %>
+            </span>
             <br/><br/>
           <% end %>
           <h4> 
