@@ -8,11 +8,11 @@
           
           <% if @event.startdatetime.to_date === @event.enddatetime.to_date %>
             <p>
-              <time itemprop="startDate" datetime="<%=event.startdatetime%>"><%= l(@event.startdatetime, :format => '%_d. %B %Y (%a)') %></time> <%=t :from %> <%= l(@event.startdatetime, :format =>'%H:%M')%> <%=t :to %> <%= l(@event.enddatetime, :format =>'%H:%M')%> Uhr<br/>
+              <time itemprop="startDate" datetime="<%=@event.startdatetime%>"><%= l(@event.startdatetime, :format => '%_d. %B %Y (%a)') %></time> <%=t :from %> <%= l(@event.startdatetime, :format =>'%H:%M')%> <%=t :to %> <%= l(@event.enddatetime, :format =>'%H:%M')%> Uhr<br/>
             </p>
           <% else %>
             <p>
-              <time itemprop="startDate" datetime="<%=event.startdatetime%>"><%= l(@event.startdatetime, :format =>'%_d. %B %Y (%a)') %></time> <%=t :at %> <%= l(@event.startdatetime, :format =>'%H:%M')%> Uhr <%=t :to %><br/>
+              <time itemprop="startDate" datetime="<%=@event.startdatetime%>"><%= l(@event.startdatetime, :format =>'%_d. %B %Y (%a)') %></time> <%=t :at %> <%= l(@event.startdatetime, :format =>'%H:%M')%> Uhr <%=t :to %><br/>
               <time itemprop="endDate" datetime="<%=event.enddatetime%>"><%= l(@event.enddatetime, :format => '%_d. %B %Y (%a)') %></time> <%=t :at %> <%= l(@event.enddatetime, :format => '%H:%M')%> Uhr  <br/>
             </p>
           <% end %>
