@@ -1,6 +1,6 @@
 <tr itemscope itemtype='http://data-vocabulary.org/Event'>  
   <td>
-      <time itemprop="startDate"><%= l(event.startdatetime, :format => '%_d.%b') %></time><br/>
+      <time itemprop="startDate" datetime="<%=event.startdatetime%>"><%= l(event.startdatetime, :format => '%_d.%b') %></time><br/>
       <%= l(event.startdatetime, :format => '%H:%M') %>Uhr<br/>
   </td>
   <td>
