@@ -1,10 +1,10 @@
-<tr itemscope itemtype="http://data-vocabulary.org/Event">  
+<tr itemscope itemtype='http://data-vocabulary.org/Event'>  
   <td>
       <time itemprop="startDate"><%= l(event.startdatetime, :format => '%_d.%b') %></time><br/>
       <%= l(event.startdatetime, :format => '%H:%M') %>Uhr<br/>
   </td>
   <td>
-    <strong itemprop="summary"><%= link_to (event.title), event %></strong> <span itemprop="url">(<%= link_to (event.sitecity.name), event.sitecity %>)</span><br/>
+    <strong itemprop="summary" itemprop="url"><%= link_to (event.title), event %></strong><span itemprop="location" itemscope itemtype='http://data-vocabulary.org/​Organization' itemtype='http://data-vocabulary.org/Address' itemprop="locality">(<%= link_to (event.sitecity.name), event.sitecity %>)</span><br/>
     <span itemprop="description">
       <%= truncate(event.description, :length => 220) %> <%= link_to '[mehr...]', event %><br/><br/>
     </span>

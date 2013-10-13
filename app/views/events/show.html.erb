@@ -3,7 +3,7 @@
 <% end %>
 
 <div class="row">
-    <div class="span9 offset0", itemscope itemtype="http://data-vocabulary.org/Event">
+    <div class="span9 offset0", itemscope itemtype='http://data-vocabulary.org/Event'>
           <h1 itemprop="summary"><%= @event.title %></h1>
           
           <% if @event.startdatetime.to_date === @event.enddatetime.to_date %>
@@ -23,11 +23,11 @@
             <% end %>
           </p>
           <br/>
-          <p itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">
+          <p itemprop="location" itemscope itemtype='http://data-vocabulary.org/​Organization'>
             <strong itemprop="name">
               <%= @event.location.name %>
             </strong><br/>
-            <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+            <span itemprop="address" itemscope itemtype='http://data-vocabulary.org/Address'>
               <span itemprop="street-address"><%= @event.location.street1 %></span><br/>
               <%= @event.location.postalcode %> <span itemprop="locality"><%= @event.location.city %></span><br/>
             </span>
