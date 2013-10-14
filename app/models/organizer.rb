@@ -1,5 +1,5 @@
 class Organizer < ActiveRecord::Base
-  attr_accessible :name, :description, :email, :phone, :sitecity_id, :user_id, :website, :eventpage, :url
+  attr_accessible :name, :description, :email, :phone, :sitecity_id, :user_id, :website, :eventpage, :url, :location_id
 
 	validates :name, :user_id, :sitecity_id, presence: true
 
