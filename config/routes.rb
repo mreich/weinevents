@@ -20,6 +20,10 @@ Weinevents::Application.routes.draw do
   get 'locations/:location', to: 'events#index', as: :location
   resources :locations
 
+  get 'organizers/new', to: 'organizers#new'
+  get 'organizers/:organizer', to: 'events#index', as: :organizer
+  resources :organizers
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

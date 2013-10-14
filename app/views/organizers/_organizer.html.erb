@@ -1,0 +1,7 @@
+<tr>  
+	<td><%= link_to (organizer.name), organizer %></td>
+	<% if current_user == organizer.user %>
+		<td><%= link_to t(:edit), edit_organizer_path(organizer) %></td>
+		<td><%= link_to t(:delete), organizer, method: :delete, data: { confirm: t(:sure) } %></td>
+	<% end %>
+</tr>

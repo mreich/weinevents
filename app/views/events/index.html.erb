@@ -94,6 +94,17 @@
       </table>
       <br />
 
+      <h3><%=t :event_organizers_in %> <%= @sitecity.name %></h3><br/> 
+
+      <table class="table table-striped">
+
+        <tbody>
+          <%= render @sitecity.organizers %>
+        </tbody>
+
+      </table>
+      <br />
+
     <% end %> 
 
   </div>

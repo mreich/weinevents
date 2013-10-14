@@ -84,6 +84,19 @@ de:
   location_state_id: 'Bundesland/Kanton'
   location_map: 'Hier finden Sie das Weinevent:'
   event_locations_in: 'Event Locations in'
+  organizer_sitecity_id: 'Im Umkreis von'
+  location_description: 'Beschreibung'
+  organizer_website: 'Webseite'
+  organizer_eventpage: 'Unterseite mit Events'
+  organizer_email: 'E-mail'
+  organizer_phone: 'Telefonnummer'
+  editing_organizer: 'Veranstalter ändern'
+  organizers_index_title: 'Weinevent Veranstalter'
+  new_organizer: 'Neuen Event Veranstalter anlegen'
+  submit_new_organizer: 'Neuen Event Veranstalter erstellen'
+  event_organizer_id: 'Event Veranstalter'
+  event_organizers_in: 'Event Veranstalter in'
+  event_organizer: "Über den Veranstalter"
   from: 'von'
   to: 'bis'
   at: 'um'
@@ -97,6 +110,7 @@ de:
   events_index_sitecity_meta_desc_1: 'Auf der Suche nach einem tollen Weinevent in'
   events_index_sitecity_meta_desc_2: '? Hier finden Sie Weinproben, -seminare und -feste in'
   events_index_location_meta_desc: 'Auf der Suche nach einem tollen Weinevent? Hier finden Sie alle Weinevents von'
+  o_clock: 'Uhr'
   date:
     abbr_day_names:
     - So

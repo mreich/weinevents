@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 
   has_many :events, :dependent => :destroy 
   has_many :locations
+  has_many :organizers
   has_many :sitecities
 
   has_and_belongs_to_many :roles

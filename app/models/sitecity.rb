@@ -7,6 +7,7 @@ class Sitecity < ActiveRecord::Base
 
   has_many :events
   has_many :locations
+  has_many :organizers
   has_many :events, :through => :locations
 
   belongs_to :country 
