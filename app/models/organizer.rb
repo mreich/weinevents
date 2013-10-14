@@ -7,7 +7,6 @@ class Organizer < ActiveRecord::Base
 
 	has_many :events
 
-
 	belongs_to :user
   belongs_to :sitecity
   belongs_to :location
