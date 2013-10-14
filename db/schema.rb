@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131014113236) do
+ActiveRecord::Schema.define(:version => 20131014120549) do
 
   create_table "countries", :force => true do |t|
     t.string   "name"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20131014113236) do
     t.string   "url"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "location_id"
   end
 
   add_index "organizers", ["url"], :name => "index_organizers_on_url", :unique => true

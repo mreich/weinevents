@@ -8,7 +8,7 @@
   <%= f.input :eventpage, label: t(:organizer_eventpage), as: :text, input_html: { rows: "1", class: "span5" } %>
   <%= f.input :email, label: t(:organizer_email), as: :text, input_html: { rows: "1", class: "span5" } %>
   <%= f.input :phone, label: t(:organizer_phone), as: :text, input_html: { rows: "1", class: "span5" } %>
-  <%= f.input :sitecity_id, label: t(:organizer_default_location), :collection => Location.all(order: 'name'), hint: "#{link_to t(:new_location), new_location_path}" %>
+  <%= f.input :location_id, label: t(:organizer_default_location), :collection => Location.all(order: 'name'), hint: "#{link_to t(:new_location), new_location_path}" %>
 
    <div class="form-actions">
     <%= f.button :submit, class: "btn btn-primary" %>
