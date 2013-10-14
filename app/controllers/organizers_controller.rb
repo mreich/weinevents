@@ -63,7 +63,7 @@ class OrganizersController < ApplicationController
     @organizer = current_user.organizers.find_by_url(params[:id])
 
     respond_to do |format|
-      if @organizer.update_attributes(params[:Organizer])
+      if @organizer.update_attributes(params[:organizer])
         format.html { redirect_to @organizer, notice: 'Organizer was successfully updated.' }
         format.json { head :no_content }
       else
