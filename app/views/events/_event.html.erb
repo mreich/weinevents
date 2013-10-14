@@ -4,7 +4,7 @@
       <%= l(event.startdatetime, :format => '%H:%M') %>Uhr<br/>
   </td>
   <td>
-    <strong itemprop="summary"><%= link_to (event.title), event, :itemprop => 'url' %></strong>(<span itemprop="location" itemscope itemtype='http://data-vocabulary.org/​Organization'> <span itemtype='http://data-vocabulary.org/Address'><span itemprop="locality"><%= link_to (event.sitecity.name), event.sitecity %></span></span></span>)<br/>
+    <strong itemprop="summary"><%= link_to (event.title), event, :itemprop => 'url' %></strong>(<span itemprop="location" itemscope itemtype='http://data-vocabulary.org/​Organization'><span itemtype='http://data-vocabulary.org/Address'><span itemprop="locality"><%= link_to (event.sitecity.name), event.sitecity %></span></span></span>)<br/>
     <span itemprop="description">
       <%= truncate(event.description, :length => 220) %> <%= link_to '[mehr...]', event %><br/><br/>
     </span>
