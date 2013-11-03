@@ -65,18 +65,6 @@
             </span>
             <br/><br/>
           <% end %>
-          <% if @event.organizer.nil? %>
-          <% else %>
-            <h4> 
-              <%=t :event_organizer %>: <%=@event.organizer.name %> 
-              <% if current_user == @event.organizer.user %> 
-                <%= link_to t(:edit), edit_organizer_path(@event.organizer) %><br/>
-              <% end %>
-            </h4> 
-            <p>
-              <%= simple_format h @event.organizer.description %>
-            </p>
-          <% end %>
 					<%= link_to t(:back), events_path %>
     </div>
 </div>

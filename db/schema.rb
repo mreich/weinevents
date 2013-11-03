@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131014120549) do
+ActiveRecord::Schema.define(:version => 20131012130110) do
 
   create_table "countries", :force => true do |t|
     t.string   "name"
@@ -37,11 +37,9 @@ ActiveRecord::Schema.define(:version => 20131014120549) do
     t.datetime "startdatetime"
     t.datetime "enddatetime"
     t.integer  "location_id"
-    t.integer  "organizer_id"
   end
 
   add_index "events", ["location_id"], :name => "index_events_on_location_id"
-  add_index "events", ["organizer_id"], :name => "index_events_on_organizer_id"
   add_index "events", ["url"], :name => "index_events_on_url", :unique => true
   add_index "events", ["user_id"], :name => "index_events_on_user_id"
 
@@ -69,24 +67,6 @@ ActiveRecord::Schema.define(:version => 20131014120549) do
 
   add_index "locations", ["url"], :name => "index_locations_on_url", :unique => true
   add_index "locations", ["user_id"], :name => "index_locations_on_user_id"
-
-  create_table "organizers", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "email"
-    t.string   "phone"
-    t.string   "website"
-    t.string   "eventpage"
-    t.integer  "sitecity_id"
-    t.integer  "user_id"
-    t.string   "url"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "location_id"
-  end
-
-  add_index "organizers", ["url"], :name => "index_organizers_on_url", :unique => true
-  add_index "organizers", ["user_id"], :name => "index_organizers_on_user_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
