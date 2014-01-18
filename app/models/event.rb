@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :title, :description, :website, :image, :price, :url, :tag_list, :sitecity_id, :enddatetime, :startdatetime, :location, :street1, :street2, :city, :postalcode, :email, :phone, :location_id
+  attr_accessible :title, :description, :website, :image, :price, :url, :tag_list, :sitecity_id, :enddatetime, :startdatetime, :location, :street1, :street2, :city, :postalcode, :email, :phone, :location_id, :external_location_id
 
   validates :user_id, :title, :description, presence: true
   has_attached_file :image, styles: { medium: "320x240>"}
@@ -12,6 +12,7 @@ class Event < ActiveRecord::Base
   belongs_to :user
   belongs_to :sitecity
   belongs_to :location
+  belongs_to :external_location, :class_name => "Location"
   
   #Required for stringex URL conversion
   

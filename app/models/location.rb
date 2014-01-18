@@ -6,6 +6,7 @@ class Location < ActiveRecord::Base
   validates_uniqueness_of :name
 
 	has_many :events
+  has_many :external_events, :class_name => "Event", :foreign_key => "external_location_id"
 
 	belongs_to :user
   belongs_to :sitecity

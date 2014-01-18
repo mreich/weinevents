@@ -1,8 +1,9 @@
-<%= simple_form_for(@event, html: { class: "form-horizontal"}, :remote => true) do |f| %>
+<%= simple_form_for(@event, html: { class: "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
   <%= f.full_error :image_file_size, class: "alert alert-error" %>
   <%= f.full_error :image_content_type, class: "alert alert-error" %>
 	<%= f.input :location_id, label: t(:event_location_id), :collection => Location.all(order: 'name'), hint: "#{link_to t(:new_location), new_location_path}" %>
+  <%= f.input :external_location_id, label: t(:event_external_location_id), :collection => Location.all(order: 'name'), hint: "#{link_to t(:new_location), new_location_path}" %>
   <%= f.input :title, label: t(:event_title), as: :text, input_html: { rows: "1", class: "span8" } %>
 	<%= f.input :description, label: t(:event_description), as: :text, input_html: { rows: "20", class: "span8" } %>
   <%= f.input :startdatetime, label: t(:event_startdatetime), input_html: { class: "span1" } %>

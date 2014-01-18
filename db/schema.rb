@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131012130110) do
+ActiveRecord::Schema.define(:version => 20131103195919) do
 
   create_table "countries", :force => true do |t|
     t.string   "name"
@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(:version => 20131012130110) do
 
   create_table "events", :force => true do |t|
     t.text     "description"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.integer  "user_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -37,8 +37,10 @@ ActiveRecord::Schema.define(:version => 20131012130110) do
     t.datetime "startdatetime"
     t.datetime "enddatetime"
     t.integer  "location_id"
+    t.integer  "external_location_id"
   end
 
+  add_index "events", ["external_location_id"], :name => "index_events_on_external_location_id"
   add_index "events", ["location_id"], :name => "index_events_on_location_id"
   add_index "events", ["url"], :name => "index_events_on_url", :unique => true
   add_index "events", ["user_id"], :name => "index_events_on_user_id"

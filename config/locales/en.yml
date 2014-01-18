@@ -83,7 +83,8 @@ en:
   locations_index_title: 'Wine Event Locations'
   new_location: 'Create new event location'
   submit_new_location: 'Create new event location'
-  event_location_id: 'Event location'
+  event_location_id: 'Event organizer'
+  event_external_location_id: 'Event location'
   location_country_id: 'Country'
   location_state_id: 'State'
   location_map: 'Event location map'
@@ -100,7 +101,7 @@ en:
   submit_new_organizer: 'Create new event organizer'
   event_organizer_id: 'Event organizer'
   event_organizers_in: 'Event organizer in'
-  event_organizer: "Abou the event host"
+  event_organizer: "About the event host"
   from: 'from'
   to: 'to'
   at: 'at'
